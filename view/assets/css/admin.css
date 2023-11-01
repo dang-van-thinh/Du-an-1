@@ -1,0 +1,41 @@
+:root{
+    --bg-main : #477474;
+    --text-main: #000000;
+    --text-hover: #ffff;
+}
+.img_admin{
+    width: 3rem;
+    border-radius: 50%;
+}
+.header_admin{
+    background-color: var(--bg-main);
+}
+.img_table{
+    width: 100%;
+    max-height: 5rem;
+    object-fit: cover;
+}
+.menu ul li{
+    transition: 0.2s;
+}
+.menu ul li:hover {
+    background-color: var(--bg-main);
+    border-radius: 0.5rem;
+    transform: translateY(-3px);
+}
+.border_menu{
+    box-shadow: 0 5px 5px gray;
+    border-radius: 0.5rem;
+}
+.hover_item{
+    transition: 0.2s;
+}
+.hover_item:hover{
+    transform: translateY(-3px);
+}
+.text_custom{
+    color: var(--text-main);
+}
+.text_custom:hover{
+    color: var(--text-hover);
+}

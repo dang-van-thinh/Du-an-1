@@ -2,8 +2,23 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
-
+:root{
+    --bg-main: #477474;
+    --text-hover: #ffff;
+    --text-main: #000000;
+    
+}
+.header_home{
+    background-color:var(--bg-main);
+}
+.text_custom{
+    color: var(--text-main);
+}
+.text_custom:hover{
+    color: var(--text-hover);
+}
 .wrapper {
     width: 100%;
     min-height: 100vh;
@@ -12,7 +27,12 @@
     align-items: center;
 }
 
-
+.hover_item{
+    transition: 0.2s;
+}
+.hover_item:hover{
+    transform: translateY(-3px);
+}
 
 /* home page */
 .sale {
