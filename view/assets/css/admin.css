@@ -3,6 +3,9 @@
     --text-main: #000000;
     --text-hover: #ffff;
 }
+.menu_height{
+    height: 100%;
+}
 .img_admin{
     width: 3rem;
     border-radius: 50%;
@@ -38,4 +41,38 @@
 }
 .text_custom:hover{
     color: var(--text-hover);
+}
+
+
+.toasct_custom{
+    padding: 5px 10px ;
+    color: #ffff;
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px gray;
+}
+#toasct{
+    margin: 10px 0;
+    position: absolute;
+    right: 0.75rem;
+    top: 5rem;
+    transition: 0.5s;
+    cursor: default;
+}
+.toasct_active{
+    /* transform: translateX(150%); */
+    animation: toasct_active ease-in-out 2s  forwards;
+}
+@keyframes toasct_active {
+    0%{
+        right: 0.75rem;
+    }
+    100%{
+        right: -100%;
+        display: none;
+    }
+}
+
+.img_infor{
+    width: 24rem;
 }

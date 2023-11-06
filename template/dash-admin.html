@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid wrapper">
         <header class="header_admin">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
@@ -67,40 +67,50 @@
             </nav>
         </header>
 
+        
+        <div id="toasct ">
+            <p class="toasct_custom bg-success">
+                Thành công
+            </p>
+        </div>
+
+        
         <!-- home admin -->
         <div class="container-fluid mt-4 menu">
-            <div class="row">
-                <div class="col-2">
-                    <div class="border-1 border border_menu">
+            <div class="row ">
+                <div class="col-2 ">
+                    <div class="border-1 border border_menu menu_height">
                         <ul class="nav flex-column">
                             <li class="nav-item mb-3">
-                                <a class="nav-link text_custom fw-bold" aria-current="page" href="#">Quản lý sản phẩm</a>
+                                <a class="nav-link text_custom fw-bold" aria-current="page" href="#">Quản lý sản
+                                    phẩm</a>
                             </li>
                             <li class="nav-item mb-3">
-                                
+
                                 <a class="nav-link text_custom fw-bold" href="#">Quản lý danh mục</a>
                             </li>
                             <li class="nav-item mb-3">
                                 <a class="nav-link text_custom fw-bold" href="#">Quản lý tài khoản</a>
                             </li>
                             <li class="nav-item mb-3">
-                                <a class="nav-link text_custom fw-bold" href="#">Thống kê hóa đơ<nav></nav></a>
+                                <a class="nav-link text_custom fw-bold" href="#">Thống kê hóa đơn</a>
                             </li>
                             <li class="nav-item mb-3">
                                 <a class="nav-link text_custom fw-bold" href="#">Biểu đồ thống kê</a>
                             </li>
                             <li class="nav-item mb-3">
-                                <a class="nav-link disabled text_custom fw-bold" aria-disabled="true">Quản lý doanh thu</a>
+                                <a class="nav-link disabled text_custom fw-bold" aria-disabled="true">Quản lý doanh
+                                    thu</a>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-10">
-                    <h3>Quản lý sản phẩm</h3>
+                <div class="col-10 float_right">
+                    <h3 class="my-4">Danh sách sản phẩm</h3>
                     <table class="table table-bordered table-hover align-middle">
                         <thead class="table-dark">
                             <tr>
-                                <th><input type="checkbox"  class="item_checkbox" id="checkAll"></th>
+                                <th><input type="checkbox" class="item_checkbox" id="checkAll"></th>
                                 <th>STT</th>
                                 <th>Tên sản phẩm</th>
                                 <th>Ảnh</th>
@@ -174,21 +184,21 @@
                     <div>
                         <nav aria-label="Page navigation example">
                             <ul class="pagination">
-                              <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                  <span aria-hidden="true">&laquo;</span>
-                                </a>
-                              </li>
-                              <li class="page-item"><a class="page-link" href="#">1</a></li>
-                              <li class="page-item"><a class="page-link" href="#">2</a></li>
-                              <li class="page-item"><a class="page-link" href="#">3</a></li>
-                              <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                  <span aria-hidden="true">&raquo;</span>
-                                </a>
-                              </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
                             </ul>
-                          </nav>
+                        </nav>
                     </div>
                     <!-- group input -->
                     <div class="my-5">
@@ -198,21 +208,94 @@
                             <a href="#" class="btn btn-danger" id="delSelect">Xóa theo các lựa chọn</a>
                         </div>
                     </div>
+
+                    
+                    <!-- thêm mới -->
+                    <div class="container my-4">
+                        <div class="my-3">
+                            <h3>Thêm mới hàng hóa</h3>
+                        </div>
+                        <form action="" method="post">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="mt-3">
+                                        <label for="" class="form-label">Mã sản phẩm: </label>
+                                        <input type="text" readonly value="" class="form-control"
+                                            placeholder="Mã sản phẩm">
+                                    </div>
+                                    <div class="mt-3">
+                                        <label for="name_sp" class="form-label">Tên sản phẩm</label>
+                                        <input type="text" name="name_sp" id="name_sp" class="form-control"
+                                            placeholder="Nhập tên sản phẩm">
+                                    </div>
+                                    <div class="mt-3">
+                                        <label for="price_sp" class="form-label">Giá sản phẩm</label>
+                                        <input type="number" name="price_sp" id="price_sp" class="form-control"
+                                            min="1000" placeholder="Nhập giá sản phẩm">
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mt-3">
+                                        <input type="checkbox" name="" id="" class="form-check-input">
+                                    </div>
+                                    <div class="mt-3">
+                                        <label for="price_km" class="form-label">Giá khuyến mãi: </label>
+                                        <input type="text" name="price_km" class="form-control" id="price_km"
+                                            placeholder="Giá khuyến mãi sản phẩm">
+                                    </div>
+                                    <div class="mt-3">
+                                        <label for="img_sp" class="form-label">Ảnh</label>
+                                        <input type="file" name="img_sp" id="img_sp" class="form-control">
+                                    </div>
+                                    <div class="mt-3">
+                                        <label for="date_sp" class="form-label">Ngày nhập</label>
+                                        <input type="date" name="date_sp" id="date_sp" class="form-control"
+                                            placeholder="Nhập ngày nhập sản phẩm">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mt-3">
+                                        <label for="loai_sp" class="form-label">Loại sản phẩm: </label>
+                                        <select name="loai_sp" id="loai_sp" class="form-select">
+                                            <option value="">[Chọn loại sản phẩm phù hợp]</option>
+                                            <option value="1">Giày thể thao</option>
+                                        </select>
+                                        <div class="mt-3">
+                                            <label for="quanity_sp" class="form-label">Số lượng sản phẩm</label>
+                                            <input type="number" name="quanity_sp" min="1" id="quanity_sp"
+                                                class="form-control" placeholder="Nhập số lượng sản phẩm">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <label for="mota_sp" class="form-label">Mô tả sản phẩm</label>
+                                <textarea name="mota_sp" id="mota_sp" class="form-control"
+                                    placeholder="Nhập mô tả sản phẩm"></textarea>
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
             </div>
-           
-    
+
+
             <!-- main -->
             <div>
-               
-    
+
+
             </div>
         </div>
+
+
     </div>
 
     <!-- script bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../view/assets/js/admin.js"></script>
+    <script src="../view/assets/js/admin.js"></script>
+    
 </body>
 
 </html>
