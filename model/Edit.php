@@ -2,8 +2,8 @@
 require_once 'PDO.php';
 
 // thay đổi tên loại hàng
-function edit_dm($id_loai,$ten_loai){
-    $sql= "UPDATE loai SET ten_loai='$ten_loai' WHERE id_loai=$id_loai";
+function edit_dm($id_loai,$ten_loai, $parent_dm){
+    $sql= "UPDATE loai SET ten_loai='$ten_loai',type=' $parent_dm' WHERE id_loai=$id_loai";
     pdo_excute($sql);
 }
 

@@ -3,8 +3,8 @@
     <table class="table table-bordered table-hover align-middle">
         <thead class="table-dark">
             <tr>
-                <th><input type="checkbox" class="item_checkbox" id="checkAll"></th>
-                <th>Mã danh mục</th>
+                <th style="width: 40px;"><input type="checkbox" class="item_checkbox" id="checkAll"></th>
+                <th style="width: 40px;">Mã danh mục</th>
                 <th>Tên sản phẩm</th>
                 <th>
                     <a href="?ad=add_dm" class="btn btn-success hover_item">Thêm mới</a>

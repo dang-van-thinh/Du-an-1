@@ -3,7 +3,7 @@
     <div class="my-3">
         <h3>Thêm mới hàng hóa</h3>
     </div>
-    <form action="" method="post">
+    <form action="?ad=add_sp" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="col-lg-4">
                 <div class="mt-3">
@@ -23,7 +23,7 @@
             <div class="col-lg-4">
                 <div class="mt-3">
                     <label for="price_km" class="form-label">Giá khuyến mãi: </label>
-                    <input type="text" name="price_km"  class="form-control" id="price_km" placeholder="Giá khuyến mãi sản phẩm">
+                    <input type="number" name="price_km" min="1000"  class="form-control" id="price_km" placeholder="Giá khuyến mãi sản phẩm">
                 </div>
                 <div class="mt-3">
                     <label for="img_sp" class="form-label">Ảnh</label>
@@ -50,9 +50,44 @@
                         <label for="quanity_sp" class="form-label">Số lượng sản phẩm</label>
                         <input type="number" name="quanity_sp" min="1" id="quanity_sp" class="form-control" placeholder="Nhập số lượng sản phẩm">
                     </div>
+                    <div class="mt-3">
+                        <div class="form-check">
+                        <label for="color_blue" class="form-label">Màu xanh dương</label>
+                        <input type="checkbox" name="method_color_blue" id="color_blue" class="form-check-input" value="blue">
+                        </div>
+                        <div class="form-check">
+                        <label for="color_white" class="form-label">Màu trắng</label>
+                        <input type="checkbox" name="method_color_white" id="color_white" class="form-check-input" value="white">
+                        </div>
+                        <div class="form-check">
+                        <label for="color_red" class="form-label">Màu đỏ</label>
+                        <input type="checkbox" name="method_color_red" id="color_red" class="form-check-input" value="red">
+                        </div>
+                    </div>
+                    
                 </div>
                 
             </div>
+        </div>
+        <div class="mt-3 d-flex ">
+            <div>
+                <div class="mt-3">
+                    <label for="method_size">Size sản phẩm<span class="text-danger badge">(*)</span></label>
+                    <input type="text" name="method_size" id="method_size" class="form-control" placeholder="VD: s m l 45 41">
+                </div>
+            </div>
+            <div class="mx-3">
+                <div class="mt-3 badge ">
+                            <p class="text-danger">(*)Lưu ý:
+                                - Chọn size đúng với sản phẩm : <br>
+                                + Quần áo : S , M, L,... <br>
+                                + Giày và phụ kiện vui lòng nhập đúng theo số và mỗi size phải ngăn cách bằng dấu cách <br>
+                                Tùy vào sản phẩm mà bạn thêm vào để có quyết định có chọn size với màu không !
+                            </p>
+                </div>
+
+            </div>
+            
         </div>
         <div class="mt-3">
             <label for="mota_sp" class="form-label">Mô tả sản phẩm</label>
@@ -62,7 +97,7 @@
     <div class="my-5">
         <div class="btn-group">
             <a href="?ad=home" class="btn btn-warning" id="">Danh sách hàng hóa</a>
-           <input type="text" value="Thêm mới" class="btn btn-success">
+           <input type="submit" value="Thêm mới" class="btn btn-success" name="add_sp">
         </div>
     </div>
     </form>

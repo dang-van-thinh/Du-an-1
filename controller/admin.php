@@ -22,6 +22,45 @@ if(isset($_GET['ad'])){
             include '../view/admin/san-pham/list_sp.php';
         break;
         case 'add_sp':
+            $dm = load_dm_type(1);
+            if(isset($_POST['add_sp']) && $_POST['add_sp']){
+                $name_sp = $_POST['name_sp'];
+                $price_sp = $_POST['price_sp'];
+                $price_km = $_POST['price_km'];
+                $img = $_FILES['img_sp']['name'];
+                $date_sp = $_POST['date_sp'];
+                $loai_sp = $_POST['loai_sp'];
+                $quanity_sp = $_POST['quanity_sp'];
+                $mota_sp = $_POST['mota_sp'];
+
+                $method_color = [];
+               
+                if($_POST['method_color_blue'] != null){
+                    array_push($method_color,$_POST['method_color_blue']);
+                }
+                if($_POST['method_color_white'] != null){
+                    array_push($method_color,$_POST['method_color_white']);
+                }
+                if($_POST['method_color_red'] != null){
+                    array_push($method_color,$_POST['method_color_red']);
+                }
+                $method_size = $_POST['method_size'];
+            $check_sp = check_add_sp($name_sp,$price_sp,$price_km,$loai_sp,$quanity_sp,$mota_sp,$date_sp,$img);
+                if($check_sp != ''){
+                    setcookie('toasct_f',$check_sp,time()+3,'/');
+                    header('location: ?ad=add_sp');
+                }else{
+                    echo 'okeeeee';
+                }
+            }
+            include '../view/admin/san-pham/add_sp.php';
+        break;
+        case 'list_sp':
+            $dm = load_all_dm();
+           
+            include '../view/admin/san-pham/add_sp.php';
+        break;
+        case 'ct_sp':
             $dm = load_all_dm();
            
             include '../view/admin/san-pham/add_sp.php';
@@ -146,35 +185,39 @@ if(isset($_GET['ad'])){
             if(isset($_GET['id_dm']) && $_GET['id_dm']){
                 $id_dm = $_GET['id_dm'];
                 $dm = load_one_dm($id_dm);
-                extract($dm);
+                $dm_type = load_dm_type($type=0);
                 include '../view/admin/danh-muc/ct_dm.php';
             }
             if(isset($_POST['thay_doi']) && $_POST['thay_doi']){
                 $id_loai = $_POST['id_loai'];
                 $ten_loai = $_POST['name_dm'];
+                $parent_dm = $_POST['parent_dm'];
                 setcookie('toasct_s','Thay đổi danh mục thành công !',time()+5,'/');
-                edit_dm($id_loai,$ten_loai);
+                edit_dm($id_loai,$ten_loai, $parent_dm);
                 header('location: ?ad=list_dm');
             }
         break;
         case 'del_dm':
-            if(isset($_GET['del_dm']) && $_GET['del_dm'] && $_GET['id_dm']){
+            if(isset($_GET['id_dm'])){
                 $id_dm = $_GET['id_dm'];
                 del_dm($id_dm);
                 setcookie('toasct_s','Xóa thành công danh mục sản phẩm !',time()+5,'/');
+                header('location: ?ad=list_dm');
             }
         break;
         case 'add_dm':
             if(isset($_POST['add_dm']) && $_POST['add_dm']){
                 $name_dm = $_POST['name_dm'];
-                insert_loai($name_dm);
+                $type_dm = $_POST['parent_dm'];
+                insert_loai($name_dm,$type_dm);
                 setcookie('toasct_s','Thêm mới danh mục thành công !',time()+5,'/');
             }
+            $dm_type = load_dm_type();
             include '../view/admin/danh-muc/add_dm.php';
         break;
         case 'logout':
             unset($_SESSION['id_user'],$_SESSION['role']);
-            header('location: login.php');
+            header('location: index.php');
         break;
         default: 
         include '../view/admin/san-pham/list_sp.php';

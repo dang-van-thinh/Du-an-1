@@ -1,0 +1,156 @@
+.view-cart {
+    margin: 150px 100px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+}
+.order-progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px 0 50px;
+}
+.progress-dot {
+    position: relative;
+}
+.progress-dot .dot {
+    display: inline-block;
+    margin-top: 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
+.progress-dot .dot-name {
+    position: absolute;
+    white-space: nowrap;
+    top: 22px;
+    left: 0;
+    transform: translateX(calc(-50% + 6px));
+}
+.progress-line {
+    height: 4px;
+    width: 220px;
+    background: #ccc;
+    transform: translateY(-2px);
+}
+.dot-line-active {
+    background: #000;
+    border: none !important;
+}
+.cart-content {
+    margin-top: 50px;
+}
+.cart-content-title .count-product-red {
+    color: red;
+}
+.cart-detail {
+    border-collapse: collapse;
+    margin-top: 30px;
+    width: 100%;
+}
+.cart-detail thead th {
+    border-bottom: 1px solid #ccc;
+    padding: 24px 0;
+    font-size: 14px;
+}
+.cart-detail tbody img {
+    width: 150px;
+}
+.cart-detail tbody td {
+    padding: 20px 10px;
+    vertical-align: top;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+.cart-detail tbody .product-name {
+    margin-bottom: 10px;
+}
+.cart-detail tbody .color-product,
+.cart-detail tbody .size-product {
+    font-size: 14px;
+}
+.cart-detail tbody .color-product {
+    margin-right: 10px;
+}
+.cart-detail tbody .product-info {
+    text-align: start;
+    max-width: 160px;
+}
+.cart-detail .product-quantity span {
+    display: inline-block;
+    border: 1px solid #ccc;
+}
+.cart-detail tbody .btn_plus,
+.cart-detail tbody .btn_minus {
+    padding: 8px 16px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.cart-detail tbody .btn_plus:hover,
+.cart-detail tbody .btn_minus:hover{
+    background: #ccc;
+}
+.cart-detail tbody .quantity_value {
+    padding: 8px 22px;
+}
+.cart-detail tbody .total-price {
+    font-size: 20px;
+    font-weight: 600;
+}
+.cart-detail tbody .trash-icon {
+    font-size: 20px;
+    transition: 0.25s;
+}
+.cart-detail tbody .trash-icon:hover {
+    color: red;
+}
+.cart-total-info .info-wapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+.cart-total-info .no-ship,
+.cart-total-info .free-ship {
+    margin: 20px 0;
+}
+.cart-total-info .no-ship,
+.cart-total-info .no-ship i {
+    color: red;
+}
+.cart-total-info .free-ship,
+.cart-total-info .free-ship i {
+    color: rgb(104, 149, 37);
+}
+.cart-total-info .submit-btn {
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+    width: 100%;
+    padding: 14px 0;
+    font-weight: 600;
+    font-size: 20px;
+    background: #000;
+    color: #fff;
+    border: 2px solid #000;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: 0.25s;
+}
+.cart-total-info .submit-btn:hover {
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+}
+#btn_submit{
+    padding: 0.5rem;
+    background-color: rgb(19, 19, 76);
+    border-radius: 5px;
+    transition: 0.5s;
+}
+#btn_submit:hover{
+    transform: translateY(-3px);
+}

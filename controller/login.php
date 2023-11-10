@@ -55,7 +55,7 @@ if(isset($_GET['lg'])){
             include '../view/client/login/forgot.php';
         break;
         case 'index':
-            include 'index.php';
+            header('location: index.php');
         break;
         default: include '../view/client/login/login.php';
         break;

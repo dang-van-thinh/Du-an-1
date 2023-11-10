@@ -2,54 +2,354 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../view/assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+  <link rel="stylesheet" href="../view/assets/css/index.css">
+  <title>Dự án 1</title>
 </head>
 
 <body>
-    <div class="wrapper">
-        <form action="" method="post" class="">
-            <div class="card item_center" style="width: 30rem;">
-                <div class="card-header text-center">
-                    <h4 class="fw-bold">Đăng nhập</h4>
-                </div>
-                <div class="card-body">
-                    <div class="mt-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" name="email" id="email" class="form-control"
-                            placeholder="Nhập email của bạn ">
-                    </div>
-                    <div class="mt-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" name="password" id="password" class="form-control"
-                            placeholder="Nhập mật khẩu">
-                    </div>
-                    <div class="mt-3 d-flex justify-content-between">
-                        <div class="">
-                            <input type="checkbox" name="remember" id="remember" class="form-check-input">
-                            <label for="remember" class="form-label" >Ghi nhớ</label>
-                        </div>
-                        <a href="forgot.html">Bạn quên mật khẩu ?</a>
-                    </div>
-                    <div class="my-3 text-center">
-                        <input type="submit" value="Đăng nhập" name="login" class="btn btn-outline-success px-xxl-5">
-                        <div class="my-3">
-                            <p>Bạn chưa có tài khoản ? <a href="signin.html">Đăng ký ngay</a></p>
-                        </div>
-                        <div class="my-3">
-                            <a href="index2.html">Trở về trang chủ</a>
-                        </div>
-                    
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <!-- Logo -->
+      <div class="logo">
+        <a href="">
+          <img src="../view/assets/img/logo-4-remove.png" alt="" />
+        </a>
+      </div>
+      <!-- Navbar -->
+      <nav class="navbar">
+        <ul>
+          <li><a href="">Trang chủ</a></li>
+          <li>
+            <a href="product.html">Quần áo<i class="fa-solid fa-chevron-down"></i></i></a>
+            <ul class="subnav">
+              <li><a href="">Đồ bóng đá</a></li>
+              <li><a href="">Đồ bóng đá</a></li>
+              <li><a href="">Đồ bóng đá</a></li>
+              <li><a href="">Đồ bóng đá</a></li>
+              <li><a href="">Đồ bóng đá</a></li>
+              <li><a href="">Đồ bóng đá</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="product.html">Phụ kiện <i class="fa-solid fa-chevron-down"></i></i></a>
+            <ul class="subnav">
+              <li><a href="">Túi & Balo</a></li>
+              <li><a href="">Túi & Balo</a></li>
+              <li><a href="">Túi & Balo</a></li>
+              <li><a href="">Túi & Balo</a></li>
+              <li><a href="">Túi & Balo</a></li>
+            </ul>
+          </li>
+          <li><a href="">Giới thiệu</a></li>
+          <li><a href="">Liên hệ</a></li>
 
+        </ul>
+      </nav>
+      <!-- Search, Cart, Login -->
+      <div class="nav-right">
+        <form action="" method="post">
+          <input class="search-input" type="text" placeholder="Nhập tên sản phẩm" />
+          <button class="search-button" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
         </form>
+        <div class="cart">
+          <a href="cart.html">
+            <i class="fa-solid fa-cart-shopping cart-icon"><span id="cart_number"></span></i>
+          </a>
+        </div>
+        <div class="account">
+          <div class="account-title">
+            <i class="fa-solid fa-user"></i>
+            <span>Tài khoản</span>
+          </div>
+          <div class="account-option">
+            <a href="signin.html">Đăng nhập</a>
+            <a href="signout.html">Đăng ký</a>
+            <!-- <a href="">Chỉnh sửa tài khoản</a> -->
+            <a href="">Đăng xuất</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Banner -->
+    <div class="owl-carousel owl-theme banner">
+      <div class="item"><img src="../view/assets/img/banner1.webp" alt="" /></div>
+      <div class="item"><img src="../view/assets/img/banner1.webp" alt="" /></div>
+      <div class="item"><img src="../view/assets/img/banner3.avif" alt="" /></div>
+      <div class="item"><img src="../view/assets/img/banner2.avif" alt="" /></div>
     </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+      <!-- <div class="content"> -->
+      <!-- Service -->
+      <div class="services">
+        <div class="service">
+          <img src="../view/assets/img/service1.png" alt="" />
+          <div class="service-desc">
+            <h4>Miễn phí giao hàng</h4>
+            <p>Toàn quốc</p>
+          </div>
+        </div>
+
+        <div class="service">
+          <img src="../view/assets/img/service2.png" alt="" />
+          <div class="service-desc">
+            <h4>Hoàn tiền</h4>
+            <p>Hoàn tiền trong 30 ngày</p>
+          </div>
+        </div>
+
+        <div class="service">
+          <img src="../view/assets/img/service3.png" alt="" />
+          <div class="service-desc">
+            <h4>Hỗ trợ online 24/7</h4>
+            <p>Hỗ trợ khách hàng</p>
+          </div>
+        </div>
+
+        <div class="service">
+          <img src="../view/assets/img/service4.png" alt="" />
+          <div class="service-desc">
+            <h4>Bảo mật thanh toán</h4>
+            <p>Thanh toán an toàn</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top 10 trending items -->
+      <div class="top10-products">
+        <h1 class="top10-title">Top sản phẩm được yêu thích nhất</h1>
+       
+        <div class="item">
+          <div class="product">
+            <a href="">
+              <div class="header_product">
+                <img src="../view/assets/img/sp-1.webp" alt="" class="img_product" />
+                <a href="#" class="add_product">Thêm giỏ hàng</a>
+                <input type="text" name="" hidden class="id_product" value="1">
+                
+              </div>
+            </a>
+            <a href="">
+              <div class="main_product">
+                <p class="name_product">Giày đá bóng</p>
+                <div class="price">
+                  <p class="init_price">45000</p><strong>đ</strong>
+                  <p class="sale">
+                    <del>50000 <strong>đ</strong></del>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- end product -->
+          
+          
+        </div>
+      </div>
+
+      <!-- category -->
+      <div class="category">
+        <div class="sneaker-category">
+          <div class="category-title">
+            <h2>PHỤ KIỆN THỂ THAO</h2>
+            <p>Giày đá bóng, găng tay bắt bóng, tất thể thao...</p>
+            <a href="">Xem thêm...</a>
+          </div>
+          <img src="https://giayphui.com/wp-content/uploads/2021/04/1nike-mercurial-superfly-vii-acad.png" alt="" />
+        </div>
+
+        <div class="soccer-jersey-category">
+          <div class="category-title">
+            <h2>Quần áo</h2>
+            <p>Áo Khoác, Áo Polo,Áo Tập, <br> Đồ Bóng Đá, Đồ Bóng Rổ,...</p>
+            <a href="">Xem thêm...</a>
+          </div>
+          <img src="https://www.elleman.vn/wp-content/uploads/2018/06/25/ao-da-banh-ELLE-Man-3.png" alt="" />
+        </div>
+      </div>
+
+      <!-- Products list -->
+
+    </div>
+
+    <!-- slide products -->
+
+
+    <!-- slide logo -->
+    <div class="slide-logo-wapper">
+      <div class="owl-carousel owl-theme slide-logo">
+        <div class="item"><a href=""><img src="../view/assets/img/Logo-barca.png" alt=""></a></div>
+        <div class="item"><a href=""><img src="../view/assets/img/Logo-chelsea.png" alt=""></a></div>
+        <div class="item"><a href=""><img src="../view/assets/img/Logo-liverpool.png" alt=""></a></div>
+        <div class="item"><a href=""><img src="../view/assets/img/Logo-man-city.png" alt=""></a></div>
+        <div class="item"><a href=""><img src="../view/assets/img/Logo-mu.png" alt=""></a></div>
+        <div class="item"><a href=""><img src="../view/assets/img/Logo-psg.png" alt=""></a></div>
+        <div class="item"><a href=""><img src="../view/assets/img/Logo-real.png" alt=""></a></div>
+        <div class="item"><a href=""><img src="../view/assets/img/Logo-tottenham.png" alt=""></a></div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-top">
+        <div class="contact-info">
+          <h3 class="footer-title-margin">THÔNG TIN LIÊN HỆ</h3>
+          <div class="info">
+            <p><i style="color: #fff;" class="fa-solid fa-location-dot icon-margin-right"></i> 123 Street, Old Trafford,
+              NewYork, USA</p>
+            <p><i style="color: #fff;" class="fa-regular fa-envelope icon-margin-right"></i> info@sitename.com</p>
+            <p><i style="color: #fff;" class="fa-solid fa-phone icon-margin-right"></i> + 457 789 789 65</p>
+          </div>
+          <div class="social-list">
+            <a href=""><img src="../view/assets/img/fblogo.png" alt="" /></a>
+            <a href=""><img src="../view/assets/img/instalogo.png" alt="" /></a>
+            <a href=""><img src="../view/assets/img/gmaillogo.png" alt="" /></a>
+            <a href=""><img src="../view/assets/img/tiktoklogo.png" alt="" /></a>
+            <a href=""><img src="../view/assets/img/twlogo.png" alt="" /></a>
+          </div>
+        </div>
+
+        <div class="menu-footer">
+          <h3 class="footer-title-margin">MENU</h3>
+          <div class="footer-menu-wapper">
+            <a href="">Trang chủ</a>
+            <a href="">Quần áo</a>
+            <a href="">Phụ kiện </a>
+            <a href="">Giới thiệu</a>
+            <a href="">Liên hệ</a>
+          </div>
+        </div>
+
+        <div class="service-footer">
+          <h3 class="footer-title-margin">DỊCH VỤ</h3>
+          <div class="footer-menu-wapper">
+            <p>Miễn phí giao hàng</p>
+            <p>Chính sách hoàn tiền</p>
+            <p>Hỗ trợ 24/7</p>
+            <p>Bảo mật thanh toán</p>
+          </div>
+        </div>
+
+        <div class="endow">
+          <h3 class="footer-title-margin">NHẬP EMAIL ĐỂ NHẬN NHIỀU ƯU ĐÃI</h3>
+          <p style="word-wrap: break-word;">
+            Nếu bạn muốn nhận email từ chúng tôi mỗi khi chúng tôi có ưu đãi
+            đặc biệt mới, hãy đăng ký tại đây!
+          </p>
+          <form action="">
+            <input type="email" required placeholder="Nhập email của bạn vào đây" />
+            <button type="submit"> <i style="color: #fff;" class="fa-solid fa-envelope-open-text"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2023 All Rights Reserved by Goup 2</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $(".banner").owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: true,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      autoplaySpeed: 1500,
+      navSpeed: 1500,
+      dotsSpeed: 1500,
+      // autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        600: {
+          items: 1,
+        },
+        1000: {
+          items: 1,
+        },
+      },
+    });
+
+    $(".top-10").owlCarousel({
+      loop: true,
+      margin: 30,
+      nav: true,
+      dots: false,
+      navText: ["<i class='fa-solid fa-arrow-left'></i>", "<i class='fa-solid fa-arrow-right'></i>"],
+      responsive: {
+        0: {
+          items: 1,
+        },
+        600: {
+          items: 3,
+        },
+        1000: {
+          items: 5,
+        },
+      },
+    });
+
+    $(".slide-products").owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: false,
+      dots: false,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      // autoplayHoverPause: true,
+      autoplaySpeed: 1000,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        600: {
+          items: 3,
+        },
+        1000: {
+          items: 6,
+        },
+      },
+    });
+
+    $(".slide-logo").owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: false,
+      dots: false,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      // autoplayHoverPause: true,
+      autoplaySpeed: 1000,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        600: {
+          items: 3,
+        },
+        1000: {
+          items: 8,
+        },
+      },
+    });
+  </script>
+  <script src="../view/assets/js/add_cart.js"></script>
 
 </body>
 

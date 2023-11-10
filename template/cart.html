@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.green.min.css"
+      integrity="sha512-C8Movfk6DU/H5PzarG0+Dv9MA9IZzvmQpO/3cIlGIflmtY3vIud07myMu4M/NTPJl8jmZtt/4mC9bAioMZBBdA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="../view/assets/css/cart.css" />
+    <title>Dự án 1</title>
+  </head>
+  <body>
+    <div class="container">
+       <!-- Header -->
+       <header>
+        <!-- Logo -->
+        <div class="logo">
+          <a href="">
+            <img src="img/logo-web.png" alt="" />
+          </a>
+        </div>
+        <!-- Navbar -->
+        <nav class="navbar">
+          <ul>
+            <li><a href="">Trang chủ</a></li>
+            <li>
+              <a href=""
+                >Quần áo<i class="fa-solid fa-chevron-down"></i></i
+              ></a>
+              <ul class="subnav">
+                <li><a href="">Đồ bóng đá</a></li>
+                <li><a href="">Đồ bóng đá</a></li>
+                <li><a href="">Đồ bóng đá</a></li>
+                <li><a href="">Đồ bóng đá</a></li>
+                <li><a href="">Đồ bóng đá</a></li>
+                <li><a href="">Đồ bóng đá</a></li>
+              </ul>
+            </li  >
+            <li>
+              <a href=""
+                >Phụ kiện <i class="fa-solid fa-chevron-down"></i></i
+              ></a>
+              <ul class="subnav">
+                <li><a href="">Túi & Balo</a></li>
+                <li><a href="">Túi & Balo</a></li>
+                <li><a href="">Túi & Balo</a></li>
+                <li><a href="">Túi & Balo</a></li>
+                <li><a href="">Túi & Balo</a></li>
+              </ul>
+            </li>
+            <li><a href="">Giới thiệu</a></li>
+            <li><a href="">Liên hệ</a></li>
+            
+          </ul>
+        </nav>
+        <!-- Search, Cart, Login -->
+        <div class="nav-right">
+          <form action="" method="post">
+            <input
+              class="search-input"
+              type="text"
+              placeholder="Nhập tên sản phẩm"
+            />
+            <button class="search-button" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+          <div class="cart">
+            <a href="">
+              <i class="fa-solid fa-cart-shopping cart-icon"><span>99</span></i>
+            </a>
+          </div>
+          <div class="account">
+            <div class="account-title">
+              <i class="fa-solid fa-user"></i>
+              <span>Tài khoản</span>
+            </div>
+              <div class="account-option">
+                <a href="">Đăng nhập</a>
+                <a href="">Đăng ký</a>
+                <!-- <a href="">Chỉnh sửa tài khoản</a> -->
+                <a href="">Đăng xuất</a>
+              </div>
+          </div>
+        </div>
+      </header>
+
+
+      <div class="view-cart">        
+        <div class="view-cart-left">
+            <div class="order-progress">
+                <div class="progress-dot">
+                    <span class="dot dot-line-active"></span>
+                    <span class="dot-name">Giỏ hàng</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-dot">
+                    <span class="dot"></span>
+                    <span class="dot-name">Đặt hàng</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-dot">
+                    <span class="dot"></span>
+                    <span class="dot-name">Thanh toán</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-dot">
+                    <span class="dot"></span>
+                    <span class="dot-name">Hoàn thành đơn</span>
+                </div>
+            </div>
+            <div class="cart-content">
+                <h2 class="cart-content-title">Giỏ hàng của bạn có <span class="count-product-red">3 sản phẩm</span></h2>
+                <table class="cart-detail">
+                    <thead>
+                        <tr>
+                            <th>ẢNH</th>
+                            <th>THÔNG TIN</th>
+                            <th>GIẢM GIÁ</th>
+                            <th>SỐ LƯỢNG</th>
+                            <th>THÀNH TIỀN</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="showCart">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="view-cart-right">
+          <div class="cart-total">
+            <h2 class="cart-total-title">Tổng tiền giỏ hàng</h2>
+            <div class="cart-total-info">
+              <div class="info-wapper">
+                <span class="info-name">Tổng sản phẩm</span> <span class="info-number">4</span>
+              </div>
+              <div class="info-wapper">
+                <span class="info-name">Tổng tiền hàng</span> <span class="info-number">1.200.000 VNĐ</span>
+              </div>
+              <div class="info-wapper">
+                <span class="info-name">Thành tiền</span> <span class="info-number">1.000.000 VNĐ</span>
+              </div>
+              <div class="info-wapper">
+                <span class="info-name">Phí vận chuyển</span> <span class="info-number">0 VNĐ</span>
+              </div>
+              <p class="no-ship"><i class="fa-solid fa-triangle-exclamation"></i> Miễn phí ship với đơn hàng trên 500.000 VNĐ</p>
+              <p class="free-ship"><i class="fa-solid fa-circle-check"></i> Đơn hàng của bạn được miễn phí ship</p>
+              <form action="" class="submit-total-cart">
+                <input type="hidden" name="">
+                <input type="submit" class="submit-btn" value="Đặt hàng">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="footer-top">
+          <div class="contact-info">
+            <h3 class="footer-title-margin">THÔNG TIN LIÊN HỆ</h3>
+            <div class="info">
+              <p><i style="color: #fff;" class="fa-solid fa-location-dot icon-margin-right"></i>  123 Street, Old Trafford, NewYork, USA</p>
+              <p><i style="color: #fff;" class="fa-regular fa-envelope icon-margin-right"></i>  info@sitename.com</p>
+              <p><i style="color: #fff;" class="fa-solid fa-phone icon-margin-right"></i> + 457 789 789 65</p>
+            </div>
+            <div class="social-list">
+              <a href=""><img src="./img/fblogo.png" alt="" /></a>
+              <a href=""><img src="./img/instalogo.png" alt="" /></a>
+              <a href=""><img src="./img/gmaillogo.png" alt="" /></a>
+              <a href=""><img src="./img/tiktoklogo.png" alt="" /></a>
+              <a href=""><img src="./img/twlogo.png" alt="" /></a>
+            </div>
+          </div>
+
+          <div class="menu-footer">
+            <h3 class="footer-title-margin">MENU</h3>
+            <div class="footer-menu-wapper">
+              <a href="">Trang chủ</a>
+              <a href="">Áo đá bóng</a>
+              <a href="">Phụ kiện thể thao</a>
+              <a href="">Giới thiệu</a>
+              <a href="">Liên hệ</a>
+            </div>
+          </div>
+
+          <div class="service-footer">
+            <h3 class="footer-title-margin">DỊCH VỤ</h3>
+            <div class="footer-menu-wapper">
+              <p>Miễn phí giao hàng</p>
+              <p>Chính sách hoàn tiền</p>
+              <p>Hỗ trợ 24/7</p>
+              <p>Bảo mật thanh toán</p>
+            </div>
+          </div>
+
+          <div class="endow">
+            <h3 class="footer-title-margin">NHẬP EMAIL ĐỂ NHẬN NHIỀU ƯU ĐÃI</h3>
+            <p style="word-wrap: break-word;">
+              Nếu bạn muốn nhận email từ chúng tôi mỗi khi chúng tôi có ưu đãi
+              đặc biệt mới, hãy đăng ký tại đây!
+            </p>
+            <form action="">
+              <input type="email" required placeholder="Nhập email của bạn vào đây"/>
+              <button type="submit"> <i style="color: #fff;" class="fa-solid fa-envelope-open-text"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2023 All Rights Reserved by Goup 2</p>
+        </div>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+      integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      $(".banner").owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplaySpeed: 1500,
+        navSpeed: 1500,
+        dotsSpeed: 1500,
+        // autoplayHoverPause: true,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 1,
+          },
+          1000: {
+            items: 1,
+          },
+        },
+      });
+
+      $(".top-10").owlCarousel({
+        loop: true,
+        margin: 30,
+        nav: true,
+        dots: false,
+        navText: ["<i class='fa-solid fa-arrow-left'></i>","<i class='fa-solid fa-arrow-right'></i>"],
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 3,
+          },
+          1000: {
+            items: 5,
+          },
+        },
+      });
+
+      $(".slide-products").owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        // autoplayHoverPause: true,
+        autoplaySpeed: 1000,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 3,
+          },
+          1000: {
+            items: 6,
+          },
+        },
+      });
+
+      $(".slide-logo").owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        // autoplayHoverPause: true,
+        autoplaySpeed: 1000,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 3,
+          },
+          1000: {
+            items: 8,
+          },
+        },
+      });
+    </script>
+    <script src="./javascript/pagination.js"></script>
+    <script src="./javascript/rangeFilter.js"></script>
+    <script src="./javascript/in-decrease.js"></script>
+    <script src="../view/assets/js/add_cart.js"></script>
+  </body>
+</html>

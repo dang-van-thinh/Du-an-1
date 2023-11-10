@@ -8,7 +8,7 @@ extract($user);
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
                     <a class="navbar-brand fw-bold fs-3 text-dark" href="#">
-                        <img src="../view/assets/img/logo-3.png" alt="" style="width: 12rem;">
+                        <img src="../view/assets/img/logo-4-remove.png" alt="" style="width: 12rem;">
                         Admin
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

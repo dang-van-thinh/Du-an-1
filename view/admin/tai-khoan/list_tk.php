@@ -4,7 +4,7 @@
         <thead class="table-dark">
             <tr>
                 <th><input type="checkbox" class="item_checkbox" id="checkAll"></th>
-                <th>Mã</th>
+                <th style="width: 40px;">Mã</th>
                 <th>Tên</th>
                 <th>Ảnh</th>
                 <th>Địa chỉ</th>

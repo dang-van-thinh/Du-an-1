@@ -12,6 +12,15 @@ function load_all_dm($item_page=0,$curent=0){
     }
     return pdo_query($sql);
 }
+function load_dm_type($type = 0){
+    $sql = "SELECT * FROM loai ";
+    if($type != 0){
+        $sql .=" WHERE type <> 0";
+    }else{
+        $sql .=" WHERE type = 0  ";
+    }
+    return pdo_query($sql);
+}
 function count_item($table){
     $sql = "SELECT count(*) FROM $table ";
     return pdo_query_value($sql);

@@ -14,6 +14,17 @@
                         <label for="name_dm" class="form-label">Tên danh mục sản phẩm</label>
                         <input type="text" name="name_dm" id="name_dm" class="form-control" placeholder="Nhập tên danh mục">
                     </div>
+                    <div class="mt-3">
+                        <label for="parent_dm" class="form-label">Danh mục cha (nếu có)</label>
+                        <select name="parent_dm" id="parent_dm" class="form-select">
+                        <option value="0">[Không]</option>
+                            <?php foreach($dm_type as $key=>$item): 
+                                extract($item);
+                                ?>
+                                <option value="<?= $id_loai?>"><?= $ten_loai?></option>
+                            <?php endforeach?>
+                        </select>
+                    </div>
                 </div>
             </div>
 

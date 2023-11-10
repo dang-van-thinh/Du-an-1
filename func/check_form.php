@@ -35,4 +35,13 @@ function check_form_login($email,$password){
     }
     return $error;
 }
+
+// check add sp
+function check_add_sp($name_sp,$price_sp,$price_km,$loai_sp,$quanity_sp,$mota_sp,$date_sp,$img){
+    $error = "";
+    if($name_sp == "" || $price_sp == "" || $price_km == "" || $loai_sp == "" || $quanity_sp == "" || $mota_sp == "" ||$date_sp == "" || $img == "" ){
+        $error = "Không được để trống trường dữ liệu nào !";
+    }
+    return $error;
+}
 ?>

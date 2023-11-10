@@ -7,8 +7,8 @@ function insert_sp(){
 }
 
 // thêm mới loại sản phẩm
-function insert_loai($tenLoai){
-    $sql = "INSERT INTO loai(ten_loai) VALUES ('$tenLoai')";
+function insert_loai($tenLoai,$type_dm){
+    $sql = "INSERT INTO loai(ten_loai,type) VALUES ('$tenLoai','$type_dm')";
     pdo_excute($sql);
 }
 
