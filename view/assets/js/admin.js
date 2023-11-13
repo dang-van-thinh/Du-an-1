@@ -1,8 +1,8 @@
-let check_all = document.querySelector('#checkAll')
+document.addEventListener('DOMContentLoaded',function(){
 
-check_all.addEventListener('click', function (param) {
+document.getElementById('checkAll').addEventListener('click', function () {
     let check_box = document.querySelectorAll('.item_checkbox');
-
+let check_all = document.getElementById('checkAll');
     if (check_all.checked == true) {
         for (let i = 0; i < check_box.length; i++) {
             check_box[i].checked = true
@@ -14,8 +14,7 @@ check_all.addEventListener('click', function (param) {
     }
 })
 // chọn tất cả
-let selectAll = document.querySelector('#selectAll');
-selectAll.addEventListener('click', function (param) {
+document.getElementById('selectAll').addEventListener('click', function () {
     let check_box = document.querySelectorAll('.item_checkbox');
     for (let i = 0; i < check_box.length; i++) {
         check_box[i].checked = true
@@ -23,8 +22,8 @@ selectAll.addEventListener('click', function (param) {
 
 });
 // bỏ chọn tất cả
-let unSelectAll = document.querySelector('#unSelectAll');
-unSelectAll.addEventListener('click', function (param) {
+document.getElementById('unSelectAll')
+unSelectAll.addEventListener('click', function () {
     let check_box = document.querySelectorAll('.item_checkbox');
     for (let i = 0; i < check_box.length; i++) {
         check_box[i].checked = false
@@ -34,8 +33,7 @@ unSelectAll.addEventListener('click', function (param) {
 
 // xóa tât cả theo lựa chọn
 
-let delSelect = document.querySelector('#delSelect');
-delSelect.addEventListener('click',function (param) { 
+document.querySelector('#delSelect').addEventListener('click',function () { 
     let item_checked = document.querySelectorAll('input[name=check_sp]:checked');
     for (let i = 0; i < item_checked.length; i++) {
         if(item_checked[i]){
@@ -46,5 +44,5 @@ delSelect.addEventListener('click',function (param) {
  })
 
 
-
   
+})

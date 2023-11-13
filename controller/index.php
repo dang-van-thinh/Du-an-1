@@ -17,6 +17,7 @@ include '../view/client/component/header.php';
 if (isset($_GET['act'])) {
     switch ($_GET['act']) {
         case 'home':
+            $sp = load_all_sp(0,0,10);
             include '../view/client/page/home.php';
             break;
         case 'cart':

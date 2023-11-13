@@ -53,4 +53,26 @@ function check_login($email,$password){
     $sql = "SELECT * FROM user WHERE email = '$email' AND password = '$password'";
    return pdo_query_one($sql);
 }
+
+// load sản phẩm
+function load_all_sp($item_page=0,$curent=0,$tt=0){
+    $sql = "SELECT * from san_pham WHERE 1 ";
+    
+    if($item_page > 0){
+        $sql.= " LIMIT $item_page ";
+    }
+    if($curent > 0){
+        $sql.= " OFFSET $curent";
+    }
+    if($tt > 0){
+        $sql .=" LIMIT $tt";
+    }
+    
+   
+    return pdo_query($sql);
+}
+function load_one_sp($id_sp){
+    $sql = "SELECT * FROM san_pham WHERE id_sp='$id_sp'";
+    return pdo_query_one($sql);
+}
 ?>

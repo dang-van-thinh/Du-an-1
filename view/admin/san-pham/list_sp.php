@@ -15,62 +15,24 @@
             </tr>
         </thead>
         <tbody>
+            <?php foreach($sp as $key=>$item):
+                extract($item);
+            ?>
             <tr>
                 <td><input type="checkbox" name="check_sp" class="item_checkbox"></td>
-                <td>1</td>
-                <td>Quần thể thao nam</td>
+                <td><?= $id_sp?></td>
+                <td><?= $ten_sp?></td>
                 <td>
-                    <img src="../view/assets/img/sp1.webp" alt="" class="img_table">
+                    <img src="<?= $img?>" alt="" class="img_sp">
                 </td>
-                <td>344555</td>
-                <td>24</td>
+                <td><?= $gia_sp?></td>
+                <td><?= $so_luong?></td>
                 <td>
-                    <a href="#" class="btn btn-danger hover_item">Xóa</a>
-                    <a href="#" class="btn btn-warning hover_item">Sửa</a>
-                </td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" name="check_sp" class="item_checkbox"></td>
-                <td>1</td>
-                <td>Quần thể thao nam</td>
-                <td>
-                    <img src="../view/assets/img/sp1.webp" alt="" class="img_table">
-                </td>
-                <td>344555</td>
-                <td>24</td>
-                <td>
-                    <a href="#" class="btn btn-danger">Xóa</a>
-                    <a href="#" class="btn btn-warning">Sửa</a>
+                    <a href="?ad=del_sp&id_sp=<?= $id_sp?>" onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này ?')" class="btn btn-danger hover_item">Xóa</a>
+                    <a href="?ad=ct_sp&id_sp=<?= $id_sp?>" class="btn btn-warning hover_item">Sửa</a>
                 </td>
             </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>1</td>
-                <td>Quần thể thao nam</td>
-                <td>
-                    <img src="../view/assets/img/sp1.webp" alt="" class="img_table">
-                </td>
-                <td>344555</td>
-                <td>24</td>
-                <td>
-                    <a href="#" class="btn btn-danger">Xóa</a>
-                    <a href="#" class="btn btn-warning">Sửa</a>
-                </td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>1</td>
-                <td>Quần thể thao nam</td>
-                <td>
-                    <img src="../view/assets/img/sp1.webp" alt="" class="img_table">
-                </td>
-                <td>344555</td>
-                <td>24</td>
-                <td>
-                    <a href="#" class="btn btn-danger">Xóa</a>
-                    <a href="#" class="btn btn-warning">Sửa</a>
-                </td>
-            </tr>
+            <?php endforeach?>
         </tbody>
     </table>
     <!-- panigation -->
@@ -82,9 +44,12 @@
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                <?php for ($i=1; $i <= $page; $i++):?>
+                    <li class="page-item"><a class="page-link" href="?ad=list_sp&curent_page=<?=$i?>"><?=$i?></a></li>
+                <?php endfor ?>
+                
+                
                 <li class="page-item">
                     <a class="page-link" href="#" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>

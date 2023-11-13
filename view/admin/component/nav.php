@@ -15,16 +15,19 @@
                                 <a class="nav-link text_custom fw-bold" href="?ad=list_tk">Quản lý tài khoản</a>
                             </li>
                             <li class="nav-item mb-3">
-                                <a class="nav-link text_custom fw-bold" href="#">Thống kê hóa đơn</a>
+                                <a class="nav-link text_custom fw-bold" href="#">Quản lý bình luận</a>
                             </li>
                             <li class="nav-item mb-3">
-                                <a class="nav-link text_custom fw-bold" href="#">Biểu đồ thống kê</a>
+                                <a class="nav-link text_custom fw-bold" href="?ad=thong_ke">Thống kê hóa đơn</a>
+                            </li>
+                            <li class="nav-item mb-3">
+                                <a class="nav-link text_custom fw-bold" href="?ad=bieu_do">Biểu đồ thống kê</a>
                             </li>
                             <?php 
                             if($_SESSION['role']==2):
                             ?>
                             <li class="nav-item mb-3">
-                                <a class="nav-link text_custom fw-bold" href="#" aria-disabled="true">Quản lý doanh
+                                <a class="nav-link text_custom fw-bold" href="?ad=doanh_thu" aria-disabled="true">Quản lý doanh
                                     thu</a>
                             </li>
                             <?php endif ?>
