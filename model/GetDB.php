@@ -12,10 +12,15 @@ function load_all_dm($item_page=0,$curent=0){
     }
     return pdo_query($sql);
 }
-function load_dm_type($type = 0){
+function load_dm_type($type = 0,$status= true){
     $sql = "SELECT * FROM loai ";
     if($type != 0){
-        $sql .=" WHERE type <> 0";
+        if($status){
+            $sql .=" WHERE type <> 0";
+        }else{
+            $sql .="WHERE type='$type'";
+        }
+        
     }else{
         $sql .=" WHERE type = 0  ";
     }

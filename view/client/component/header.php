@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     <!-- Header -->
     <header>
       <!-- Logo -->
@@ -11,18 +11,25 @@
       <nav class="navbar">
         <ul>
           <li><a href="?act=home">Trang chủ</a></li>
+          <?php foreach($dm_parent as $key => $item):
+            extract($item);
+            ?>
           <li>
-            <a href="product.html">Quần áo<i class="fa-solid fa-chevron-down"></i></i></a>
+            <a href="product.html"><?= $ten_loai?><i class="fa-solid fa-chevron-down"></i></i></a>
+            
             <ul class="subnav">
-              <li><a href="">Đồ bóng đá</a></li>
-              <li><a href="">Đồ bóng đá</a></li>
-              <li><a href="">Đồ bóng đá</a></li>
-              <li><a href="">Đồ bóng đá</a></li>
-              <li><a href="">Đồ bóng đá</a></li>
-              <li><a href="">Đồ bóng đá</a></li>
+            <?php foreach( load_dm_type($id_loai,false) as $key=>$item_c):
+              extract($item_c);
+              ?>
+              <li><a href="?act=product&id_dm=<?=$id_loai?>"><?= $ten_loai?></a></li>
+              <?php endforeach ?>
             </ul>
+
+            
           </li>
-          <li>
+          
+          <?php endforeach ?>
+          <!-- <li>
             <a href="product.html">Phụ kiện <i class="fa-solid fa-chevron-down"></i></i></a>
             <ul class="subnav">
               <li><a href="">Túi & Balo</a></li>
@@ -31,7 +38,7 @@
               <li><a href="">Túi & Balo</a></li>
               <li><a href="">Túi & Balo</a></li>
             </ul>
-          </li>
+          </li> -->
           <li><a href="">Giới thiệu</a></li>
           <li><a href="">Liên hệ</a></li>
 

@@ -114,11 +114,6 @@
     font-size: 100px;
  
 }
-.inner>h3,p{
-    font-weight: 700;
-    font-size: 28px;
-    color: var(--text-hover);
-}
 .small-box .small-box-footer{
     background-color: rgba(0,0,0,.1);
     color: rgba(255,255,255,.8);
