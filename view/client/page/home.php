@@ -61,7 +61,7 @@
 
                     </div>
                 </a>
-                <a href="">
+                <a href="?act=detail_sp">
                     <div class="main_product">
                         <p class="name_product"><?= $ten_sp?></p>
                         <div class="price">

@@ -19,19 +19,7 @@ if (isset($_SESSION['id_user']) && $_SESSION['role'] != 0) {
         switch ($_GET['ad']) {
                 //quản lý sản phẩm
             case 'home':
-                 // chia page
-                 $pani = 1;
-                 if (isset($_GET['curent_page'])) {
-                     $pani = $_GET['curent_page'];
-                 }
-                 $item_page = 10;
-                 $curent = $pani - 1;
-                 $curent = $curent * $item_page;
-                 $table = 'san_pham';
-                 $total_item = count_item($table); // đếm có bao nhiêu danh mục để chia page
-                 $page = ceil($total_item / $item_page); // làm tròn số lên 
-                $sp = load_all_sp($item_page,$curent);
-                include '../view/admin/san-pham/list_sp.php';
+                include '../view/admin/thong-ke/home.php';
                 break;
             case 'add_sp':
                 $dm = load_dm_type(1);
@@ -110,7 +98,7 @@ if (isset($_SESSION['id_user']) && $_SESSION['role'] != 0) {
                  if (isset($_GET['curent_page'])) {
                      $pani = $_GET['curent_page'];
                  }
-                 $item_page = 10;
+                 $item_page = 5;
                  $curent = $pani - 1;
                  $curent = $curent * $item_page;
                  $table = 'san_pham';
@@ -387,7 +375,7 @@ if (isset($_SESSION['id_user']) && $_SESSION['role'] != 0) {
                 include '../view/admin/';
             break;
             case 'thong_ke':
-                include '../view/admin/thong-ke/home.php';
+                include '../view/admin/thong-ke/hoa_don.php';
             break;
             case 'bieu_do':
                 include '../view/admin/thong-ke/bieu_do.php';
@@ -404,19 +392,6 @@ if (isset($_SESSION['id_user']) && $_SESSION['role'] != 0) {
                 break;
         }
     } else {
-        //  // chia page
-        //  $pani = 1;
-        //  if (isset($_GET['curent_page'])) {
-        //      $pani = $_GET['curent_page'];
-        //  }
-        //  $item_page = 10;
-        //  $curent = $pani - 1;
-        //  $curent = $curent * $item_page;
-        //  $table = 'san_pham';
-        //  $total_item = count_item($table); // đếm có bao nhiêu danh mục để chia page
-        //  $page = ceil($total_item / $item_page); // làm tròn số lên 
-        // $sp = load_all_sp($item_page,$curent);
-        // include '../view/admin/san-pham/list_sp.php';
         include '../view/admin/thong-ke/home.php';
     }
 

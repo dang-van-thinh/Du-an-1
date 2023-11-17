@@ -26,6 +26,9 @@ if (isset($_GET['act'])) {
         case 'cart':
             include '../view/client/page/cart.php';
             break;
+        case 'detail_sp':
+            include '../view/client/page/detail_sp.php';
+            break;
         case 'login':
             header('location: login.php');
             break;
@@ -39,6 +42,7 @@ if (isset($_GET['act'])) {
             break;
     }
 }else{
+    $sp = load_all_sp(0,0,10);
     include '../view/client/page/home.php';
 }
 include '../view/client/component/footer.php';

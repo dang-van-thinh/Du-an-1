@@ -26,6 +26,10 @@ function load_dm_type($type = 0,$status= true){
     }
     return pdo_query($sql);
 }
+function load_dm_children($id_loai){
+    $sql = "SELECT * FROM loai WHERE id_loai='$id_loai'";
+    return pdo_query_one($sql);
+}
 function count_item($table){
     $sql = "SELECT count(*) FROM $table ";
     return pdo_query_value($sql);
@@ -34,9 +38,6 @@ function load_one_dm($id_loai){
     $sql = "SELECT * FROM loai WHERE id_loai=$id_loai";
     return pdo_query_one($sql);
 }
-
-// load sản phẩm 
-
 
 // load tk người dùng
 function load_all_tk($item_page = 0,$curent = 0){

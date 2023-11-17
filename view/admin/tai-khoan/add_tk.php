@@ -57,7 +57,7 @@
             <!-- group input -->
             <div class="my-5">
                 <div class="btn-group">
-                    <a href="?ad=list_tk" class="btn btn-warning" id="">Danh sách tài khoản người dùng</a>
+                    <a href="?ad=list_tk" class="btn btn-warning me-4" id="">Danh sách tài khoản người dùng</a>
                     <input type="submit" value="Thêm mới" class="btn btn-success" name="add_tk">
                 </div>
             </div>

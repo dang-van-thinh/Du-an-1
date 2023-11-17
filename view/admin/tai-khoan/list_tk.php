@@ -79,9 +79,9 @@
     <!-- group input -->
     <div class="my-5">
         <div class="btn-group">
-            <a href="#" class="btn btn-warning" id="selectAll">Chọn tất cả</a>
-            <a href="#" class="btn btn-success" id="unSelectAll">Bỏ chọn tất cả</a>
-            <a href="#" class="btn btn-danger" id="delSelect">Xóa theo các lựa chọn</a>
+            <a href="#" class="btn btn-warning me-3" id="selectAll">Chọn tất cả</a>
+            <a href="#" class="btn btn-success me-3" id="unSelectAll">Bỏ chọn tất cả</a>
+            <a href="#" class="btn btn-danger me-3" id="delSelect">Xóa theo các lựa chọn</a>
         </div>
     </div>
 </div>

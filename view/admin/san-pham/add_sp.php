@@ -109,7 +109,7 @@
             <!-- group input -->
             <div class="my-5">
                 <div class="btn-group">
-                    <a href="?ad=home" class="btn btn-warning" id="">Danh sách hàng hóa</a>
+                    <a href="?ad=home" class="btn btn-warning me-3" id="">Danh sách hàng hóa</a>
                     <input type="submit" value="Thêm mới" class="btn btn-success" name="add_sp">
                 </div>
             </div>

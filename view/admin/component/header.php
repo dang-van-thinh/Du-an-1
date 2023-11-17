@@ -7,7 +7,7 @@ extract($user);
         <header class="header_admin">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand fw-bold fs-3 text-dark" href="#">
+                    <a class="navbar-brand fw-bold fs-3 text-dark" href="?ad=home">
                         <img src="../view/assets/img/logo-4-remove.png" alt="" style="width: 12rem;">
                         Admin
                     </a>

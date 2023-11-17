@@ -5,5 +5,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
   <link rel="stylesheet" href="../view/assets/css/index.css">
   <link rel="stylesheet" href="../view/assets/css/cart.css" />
+  
   <title>Sport Da1</title>
 </head>

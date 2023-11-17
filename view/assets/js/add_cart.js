@@ -90,7 +90,7 @@ for (let i = 0; i < btn_plus.length; i++) {
     })
 }
 
-
+// tăng sô lượng trong giỏ hàng
 function plusQuannity(i) {
     let quantity_value = document.querySelectorAll('.quantity_value');
     let id_product = document.querySelectorAll('.id_product');
@@ -107,6 +107,7 @@ function plusQuannity(i) {
     })
 
 }
+// giảm số lượng tong giỏ hàng
 function minusQuannity(i) {
     let quantity_value = document.querySelectorAll('.quantity_value');
     let id_product = document.querySelectorAll('.id_product');
