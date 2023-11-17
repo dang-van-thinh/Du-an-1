@@ -479,11 +479,11 @@ footer {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border: none;
-    outline: none;
+    outline: none; 
 }
 .footer-top button {
     position: absolute;
-    height: 57px;
+    height: 51px;
     font-size: 32px;
     width: 20%;
     border-top-right-radius: 20px;

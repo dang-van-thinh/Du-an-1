@@ -1,6 +1,6 @@
 <div class="col-10 float_right">
     <div class="row">
-        <h3 class="my-3">Thống kê</h3>
+        <!-- <h3 class="my-3">Thống kê</h3> -->
         <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-info">

@@ -5,7 +5,7 @@
                     <div class="border-1 border border_menu menu_height">
                         <ul class="nav flex-column">
                             <li class="nav-item mb-3">
-                                <a class="nav-link text_custom fw-bold" aria-current="page" href="?ad=home">Quản lý sản
+                                <a class="nav-link text_custom fw-bold" aria-current="page" href="?ad=list_sp">Quản lý sản
                                     phẩm</a>
                             </li>
                             <li class="nav-item mb-3">

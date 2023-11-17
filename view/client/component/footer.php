@@ -51,7 +51,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2023 All Rights Reserved by Goup 2</p>
+        <p>© 2023 All Rights Reserved by Goup 14 - Đặng Văn Thịnh - Lê Văn Hòa</p>
       </div>
     </footer>
   </div>
