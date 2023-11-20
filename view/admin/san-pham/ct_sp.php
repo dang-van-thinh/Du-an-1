@@ -51,22 +51,20 @@
                             <input type="number" value="<?= $so_luong ?>" name="quanity_sp" min="1" id="quanity_sp" class="form-control" placeholder="Nhập số lượng sản phẩm">
                         </div>
                         <div class="mt-3">
-                            <?php if ($method_color != null) :
-                                foreach ($method_color as $key => $color) : ?>
-                                    <div class="form-check">
-                                        <div class="input-group">
-                                            <input type="text" name="name_color[]" id="" placeholder="Tên màu" value="<?=$key?>">
-                                            <input type="color" name="value_color[]" id="" value="<?=$color?>">
-                                        </div>
-                                    </div>
-                                <?php endforeach ?>
-                            <?php endif ?>
+                            
                             <div class="mt-3">
                                 <div class="mt-3" id="show_color">
-                                    <!-- <div class="input-group">
-                                        <input type="text" name="name_color[]" id="" placeholder="Tên màu">
-                                        <input type="color" name="value_color[]" id="">
-                                    </div> -->
+                                <?php if ($method_color != null) :
+                                foreach ($method_color as $key => $color) : ?>
+                            
+                                        <div class="input-group group_color">
+                                            <input type="text" name="name_color[]" placeholder="Tên màu" value="<?=$key?>">
+                                            <input type="color" name="value_color[]" value="<?=$color?>">
+                                            <a href="" class="del_color">Xóa</a>
+                                        </div>
+                                    
+                                <?php endforeach ?>
+                            <?php endif ?>
                                 </div>
                                 <a href="#" class="btn btn-success mt-3 add_color" id="add_color">Thêm màu</a>
 
@@ -106,7 +104,7 @@
             <!-- group input -->
             <div class="my-5">
                 <div class="btn-group">
-                    <a href="?ad=home" class="btn btn-warning me-3" id="">Danh sách hàng hóa</a>
+                    <a href="?ad=list_sp" class="btn btn-warning me-3" id="">Danh sách hàng hóa</a>
                     <input type="submit" value="Lưu" class="btn btn-success me-3" name="edit_sp">
                 </div>
             </div>
