@@ -1,0 +1,159 @@
+.hovershirt {
+    display: none;
+}   
+.chitietsanpham-color input[type="radio"] {
+    display: none;
+}
+.chitietsanpham-color .color-label,
+.chitietsanpham-color .size-label {
+    display: inline-block;
+    text-align: center;
+    width: 40px;
+    margin: 4px;
+    padding: 4px;
+    border: 2px solid #ccc;
+    cursor: pointer;
+}
+.chitietsanpham-color input[type="radio"]:checked + label {
+    background-color: rgb(204, 204, 204);
+}
+.chitietsanpham-color .color-label {
+    width: 30px;
+    height: 30px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    text-indent: -9999px;
+    position: relative;
+}
+.chitietsanpham-color .color-label::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border: 2px solid black;
+    opacity: 0;
+}
+.chitietsanpham-color input[type="radio"]:checked + .color-label::after {
+    opacity: 1;
+}
+.chitietsanpham-color #color-blue + label {
+    background-color: blue;
+}
+.chitietsanpham-color #color-red + label {
+    background-color: red;
+}
+.chitietsanpham-color #color-purple + label {
+    background-color: purple;
+}
+.chitietsanpham-color #color-yellow + label {
+    background-color: yellow;
+}
+.chitietsanpham-color #color-green + label {
+    background-color: green;
+}
+.chitietsanpham-color #color-pink + label {
+    background-color: pink;
+}
+.chitietsanpham-color #color-gray + label {
+    background-color: gray;
+}
+.chitietsanpham-color #color-white + label {
+    background-color: white;
+}
+.chitietsanpham-color #color-black + label {
+    background-color: black;
+}
+.chitietsanpham-color #color-brown + label {
+    background-color: brown;
+}
+.chitietsanpham-color #color-orange + label {
+    background-color: orange;
+}
+.margin_top{
+    margin-top: 7rem;
+}
+.product_detail_grap{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 1.5rem;
+}
+.detail_img{
+    max-width: 50rem;
+    overflow: hidden;
+}
+.detail_img img{
+    width: 100%;
+    display: block;
+}
+.header_detail{
+    padding-bottom: 1.5rem;
+}
+.detail_main{
+    padding-bottom: 1.5rem;
+}
+.price_detail{
+    font-size: 32px;
+    font-weight: 700;
+    color: red;
+    margin: 0 1rem;
+}
+.detail_rainting{
+    padding: 0 20px;
+}
+.detail_text{
+    padding-bottom: 1.5rem;
+    opacity: 0.8;
+}
+.detail_function li{
+    padding: 0.5rem 0;
+}
+.detail_quanity{
+    margin: 2rem 0;
+}
+/* .detail_quanity button,.detail_quanity span,.detail_quanity input{
+    padding: 1rem;
+} */
+.detail_quanity button{
+    font-weight: 900;
+    font-size: 20px;
+    border: none;
+    background-color: antiquewhite;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.detail_quanity span{
+    border: 1px solid gray;
+    padding: 5px 30px;
+}
+.btn_add_cart{
+    margin-left: 2rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: rgb(229, 17, 17);
+    border-radius: 10px;
+    cursor: pointer;
+    color: rgb(182, 185, 187);
+    transition: 0.5s;
+    font-weight: 700;
+}
+.btn_add_cart:hover{
+    background-color: red;
+    color: aliceblue;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 5px gray;
+}
+.detail_method form{
+margin: 1rem 0;
+}
+.comment{
+    margin: 10px 2rem;
+}
+.content_commnet{
+    border: 0.5px solid rgb(173, 173, 173);
+    /* min-height: 300px; */
+}
