@@ -29,6 +29,16 @@ if (isset($_GET['act'])) {
         case 'detail_sp':
             include '../view/client/page/detail_sp.php';
             break;
+        case 'product':
+            $sp = load_all_sp(0,0,10);
+                include '../view/client/page/product.php';
+                break;  
+        case 'gioithieu':
+            include '../view/client/page/gioithieu.php';
+            break;
+        case 'lienhe':
+                include '../view/client/page/lienhe.php';
+                break;
         case 'login':
             header('location: login.php');
             break;

@@ -15,7 +15,7 @@
             extract($item);
             ?>
           <li>
-            <a href="product.html"><?= $ten_loai?><i class="fa-solid fa-chevron-down"></i></i></a>
+            <a href="?act=product"><?= $ten_loai?><i class="fa-solid fa-chevron-down"></i></i></a>
             
             <ul class="subnav">
             <?php foreach( load_dm_type($id_loai,false) as $key=>$item_c):
@@ -27,20 +27,12 @@
 
             
           </li>
+       
           
           <?php endforeach ?>
-          <!-- <li>
-            <a href="product.html">Phụ kiện <i class="fa-solid fa-chevron-down"></i></i></a>
-            <ul class="subnav">
-              <li><a href="">Túi & Balo</a></li>
-              <li><a href="">Túi & Balo</a></li>
-              <li><a href="">Túi & Balo</a></li>
-              <li><a href="">Túi & Balo</a></li>
-              <li><a href="">Túi & Balo</a></li>
-            </ul>
-          </li> -->
-          <li><a href="">Giới thiệu</a></li>
-          <li><a href="">Liên hệ</a></li>
+          
+          <li><a href="?act=gioithieu">Giới thiệu</a></li>
+          <li><a href="?act=lienhe">Liên hệ</a></li>
 
         </ul>
       </nav>

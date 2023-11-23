@@ -391,6 +391,7 @@ header .logo {
 }
 .products-list-title {
     margin-bottom: 50px;
+    
 }
 .products {
     display: grid;
@@ -530,6 +531,12 @@ footer {
     /* transform: translateX(150%); */
     animation: toasct_active ease-in-out 2s  forwards;
 }
+.product-list-content {
+    margin: 150px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 24% 74%;
+}
 @keyframes toasct_active {
     0%{
         right: 0.75rem;
@@ -539,4 +546,5 @@ footer {
         display: none;
     }
 }
+
 
