@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../view/assets/css/product_detail.css">
+    <title>detail_sp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+   
+  
+  <link rel="stylesheet" href="../view/assets/css/index.css">
+  <link rel="stylesheet" href="../view/assets/css/cart.css" />
+  <link rel="stylesheet" href="../view/assets/css/product_detail.css" />
+</head>
+
+<body>
+    <!-- chi tiết sản phẩm  -->
+    <div class="margin_top ">
+        <div class="product_detail_grap">
+            <div class="grid_item">
+                <!-- chỗ dữ liệu ảnh từng sản phẩm khi ấn xem chi tiết sản phẩm -->
+                <div class="detail_img">
+                    <img src="../view/assets/img/bong-2.webp" alt="Ảnh sản phẩm"
+                        class="img_product" id="product-image" />
+                </div>
+
+                <!-- các ảnh bổ sung của sản phẩm  -->
+                <!-- <div class="flex justify-between mt-3">
+                <div class="">
+                  <img
+                    class="border-solid border-[1px] border-gray-300"
+                    src="./img/áo_Mu_đỏ.png"
+                    alt=""
+                  />
+                </div>
+                <div class="">
+                  <img
+                    class="border-solid border-[1px] border-gray-300"
+                    src="./img/áo_Mu_đỏ.png"
+                    alt=""
+                  />
+                </div>
+                <div class="">
+                  <img
+                    class="border-solid border-[1px] border-gray-300"
+                    src="./img/áo_Mu_đỏ.png"
+                    alt=""
+                  />
+                </div>
+                <div class="">
+                  <img
+                    class="border-solid border-[1px] border-gray-300"
+                    src="./img/áo_Mu_đỏ.png"
+                    alt=""
+                  />
+                </div>
+              </div> -->
+                <!-- các ảnh bổ sung của sản phẩm  -->
+            </div>
+
+            <!-- phần tên , giá , mô tả, kichs cỡ , chọn size và add đặt hàng  -->
+            <div class="grid_item">
+                <div class="product_description">
+                    <h4 class="header_detail">
+                       <p class="name_product">shadjhsajhdjsahj</p>
+                    </h4>
+                    <div class="detail_main">
+                        <span class="init_price">$45.00</span>
+                        <input class="id_product" value="2">
+                        <del class="">$55.25</del>
+                        <span class="">35% Off</span>
+                        
+                        
+                    </div>
+
+                    <div class="detail_text">
+                        <p class="">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus blandit massa enim. Nullam id varius nunc id varius
+                            nunc.
+                        </p>
+                    </div>
+                    <div class="">
+                        <ul class="detail_function">
+                            <li class="font-semibold">
+                                <i class="fa-solid fa-user-shield" style="color: #eb0017"></i>
+                                1 Year AL Jazeera Brand Warranty
+                            </li>
+                            <li class="font-semibold">
+                                <i class="fa-brands fa-instalod" style="color: #eb0017"></i>
+                                30 Day Return Policy
+                            </li>
+                            <li class="font-semibold">
+                                <i class="fa-solid fa-sack-dollar" style="color: #eb0017"></i>
+                                Cash on Delivery available
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--LUA CHON COLOR -->
+                    <div class="detail_method">
+                        <form action="" method="get">
+                            <span class="font-semibold text-gray-700 text-xl mr-2">Color
+                            </span>
+                            <span><input id="radio-1" name="color" type="radio" checked />
+                                <label for="radio-1" class="radio-label"><i class="fa-solid fa-shirt"
+                                        style="color: black"></i></label></span>
+                            <span><input id="radio-1" name="color" type="radio" />
+                                <label for="radio-1" class="radio-label"><i class="fa-solid fa-shirt"
+                                        style="color: #ea1026"></i></label></span>
+                            <span><input id="radio-1" name="color" type="radio" value="do"/>
+                                <label for="radio-1" class="radio-label"><i class="fa-solid fa-shirt"
+                                        style="color: blueviolet"></i></label></span>
+                        </form>
+
+                        <!-- LUA CHON SIZE -->
+                        <form action="" method="get">
+                            <span class="font-semibold text-gray-700 text-xl mr-5">Size
+                            </span>
+                            <span><input id="radio-1" name="size" type="radio" checked />
+                                <label for="radio-1" class="radio-label"><i class="fa-solid fa-s"
+                                        style="color: #6f7680"></i></label></span>
+                            <span class="mx-3"><input id="radio-1" name="size" type="radio" />
+                                <label for="radio-1" class="radio-label"><i class="fa-solid fa-m"
+                                        style="color: #4c4c10"></i></label></span>
+                            <span><input id="radio-1" name="size" type="radio" value="den"/>
+                                <label for="radio-1" class="radio-label"><i class="fa-solid fa-l"
+                                        style="color: black"></i></label></span>
+                        </form>
+                    </div>
+                </div>
+
+                <br />
+                <hr />
+
+                <!--THEM SO LUONG -->
+                <div class="detail_quanity">
+                    <button class="btn_minus">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <span id="quantity_value">1</span>
+                    <button class="btn_plus">
+                        <i class="fas fa-plus"></i>
+                    </button>
+
+                    <!-- Add to cart       -->
+
+                    <a href="#" class="btn_add_cart">thêm</a>
+
+                </div>
+
+                <hr />
+
+                <ul class="my-4">
+                    <li>SKU: <a href="#">BE45VGRT</a></li>
+                    <li>Category: <a href="#">Clothing</a></li>
+                    <li>
+                        Tags: <a href="#" rel="tag">Cloth</a>,
+                        <a href="#" rel="tag">printed</a>
+                    </li>
+                </ul>
+
+                <span><i class="fa-brands fa-facebook-f" style="color: #85888e"></i>
+                    <i class="ml-[16px] fa-brands fa-youtube" style="color: #85888e"></i>
+                    <i class="ml-[16px] fa-solid fa-location-dot" style="color: #85888e"></i>
+                    <i class="ml-[16px] fa-brands fa-google" style="color: #85888e"></i>
+                </span>
+            </div>
+        </div>
+        <!-- binh luan  -->
+        <div class="comment">
+            <h3 class="">Comment:</h3>
+            <div class="content_commneted">
+                <!-- danh sách đã comment -->
+                <div class="group_commented">
+                    <div class="info_commented">
+                        <div class="img_commented">
+                            <img src="../view/assets/img/fblogo.png" alt="" class="">
+                        </div>
+                        <div class="user_commented">
+                            <p>Nguyễn Văn A</p>
+                        </div>
+                    </div>
+                    <div class="text_commented">
+                        <p>Sản phẩm oke , không có gì phải chê</p>
+                    </div>
+                </div>
+
+                <!-- người mới comment -->
+                <form action="" method="post"></form>
+                <div class="group_commented p_top">
+                        <!-- thong tin nguoi dung comment -->
+                        <div class="info_commented">
+                            <div class="img_commented">
+                                <img src="../view/assets/img/sp1.webp" alt="" class="">
+                            </div>
+                            <div class="user_commented">
+                                <p>Nguyễn Văn A</p>
+                            </div>
+                        </div>
+                        <!-- noi dung comment -->
+                        <div class="text_commented">
+                            <textarea name="" id="" cols="90" rows="5" placeholder="Bình luận ."></textarea>
+                        </div>
+                        <div>
+                            <input type="submit" value="Đăng" class="btn_submit">
+                        </div>
+                </div>
+            </form>
+            </div>
+        </div>
+
+        <!-- San pham cung danh muc -->
+        <div class="wrapper">
+            <h1 class="">Sản Phẩm Liên Quan</h1>
+            <div class="product">
+                <!-- <?php foreach ($sp as $key => $item) :
+          extract($item);
+        ?>
+          <div class="item_product">
+            <a href="?act=detail_sp">
+              <div class="header_product">
+                <img src="<?= $img ?>" alt="" class="img_product" />
+                <a href="#" class="add_product">Thêm giỏ hàng</a>
+                <input type="text" name="" hidden class="id_product" value="<?= $id_sp ?>">
+  
+              </div>
+            </a>
+            <a href="?act=detail_sp">
+              <div class="main_product">
+                <p class="name_product"><?= $ten_sp ?></p>
+                <div class="price">
+                  <p class="init_price"><?= $gia_km ?></p><strong>đ</strong>
+                  <p class="sale">
+                    <del><?= $gia_sp ?> <strong>đ</strong></del>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        <?php endforeach ?> -->
+                <!-- end product -->
+
+            </div>
+        </div>
+
+
+    </div>
+    <script src="../view/assets/js/product_detail.js"></script>
+    <script src="../view/assets/js/add_cart.js"></script>
+</body>
+
+</html>

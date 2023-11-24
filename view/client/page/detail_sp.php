@@ -4,7 +4,7 @@
     <div class="grid_item">
       <!-- chỗ dữ liệu ảnh từng sản phẩm khi ấn xem chi tiết sản phẩm -->
       <div class="detail_img">
-        <img src="../view/assets/img/bong-2.webp" alt="Ảnh sản phẩm" class="w-100% transition-transform duration-500 transform" id="product-image" />
+        <img src="../view/assets/img/bong-2.webp" alt="Ảnh sản phẩm" id="img_product" id="product-image" />
       </div>
 
       <!-- các ảnh bổ sung của sản phẩm  -->
@@ -45,27 +45,21 @@
     <div class="grid_item">
       <div class="product_description">
         <h4 class="header_detail">
-          <a href="#">ÁO MU</a>
+          <p class="name_product"><?= $ten_sp ?></p>
+          <input type="hidden" name="id_product" value="<?= $id_sp ?>">
         </h4>
         <div class="detail_main">
-          <span class="price_detail">$45.00</span>
-          <del class="">$55.25</del>
-          <span class="">35% Off</span>
-          <span class="detail_rainting">
-            <i class="fa-solid fa-star" style="color: #f5db38"></i>
-            <i class="fa-solid fa-star" style="color: #f5db38"></i>
-            <i class="fa-solid fa-star" style="color: #f5db38"></i>
-            <i class="fa-regular fa-star" style="color: #f5db38"></i>
-          </span>
-          <span class="rating_num">(21)</span> XẾP HANG
+          
+            <span class="price_detail init_price"><?= $gia_sp ?> </span><span class="price_unit">VND</span>
+          
+          <del class=""><?=$gia_km?>VND</del>
+         
         </div>
 
         <div class="detail_text">
-          <p class="">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus blandit massa enim. Nullam id varius nunc id varius
-            nunc.
-          </p>
+          <textarea class="" rows="10" cols="90" readonly>
+            <?=$mo_ta?>
+          </textarea>
         </div>
         <div class="">
           <ul class="detail_function">
@@ -85,29 +79,54 @@
         </div>
 
         <!--LUA CHON COLOR -->
-        <div class="detail_method">  
-          <form action="" method="get">
-            <span class="font-semibold text-gray-700 text-xl mr-2">Color
+        <div class="detail_method">
+          <!-- <form action="" method="get"> -->
+          <div>
+            <span class="">Color</span>
+            <?php 
+            $color = $method_color;
+            $color = json_decode($color);
+            // var_dump($color);
+            foreach($color as $name=>$value):
+            ?>
+            <span>
+              <input id="<?=$name?>" name="color" type="radio" value="<?=$name?>"/>
+              <label for="<?=$name?>" class="radio-label">
+                <i class="fa-solid fa-shirt" style="color:<?=$value?>"></i>
+              </label>
             </span>
-            <span><input id="radio-1" name="radio" type="radio" checked />
-              <label for="radio-1" class="radio-label"><i class="fa-solid fa-shirt" style="color: black"></i></label></span>
-            <span><input id="radio-1" name="radio" type="radio" />
-              <label for="radio-1" class="radio-label"><i class="fa-solid fa-shirt" style="color: #ea1026"></i></label></span>
-            <span><input id="radio-1" name="radio" type="radio" />
-              <label for="radio-1" class="radio-label"><i class="fa-solid fa-shirt" style="color: blueviolet"></i></label></span>
-          </form>
-        
-        <!-- LUA CHON SIZE -->
-        <form action="" method="get">
-          <span class="font-semibold text-gray-700 text-xl mr-5">Size
-          </span>
-          <span><input id="radio-1" name="radio" type="radio" checked/>
-            <label for="radio-1" class="radio-label"><i class="fa-solid fa-s" style="color: #6f7680"></i></label></span>
-          <span class="mx-3"><input id="radio-1" name="radio" type="radio" />
-            <label for="radio-1" class="radio-label"><i class="fa-solid fa-m" style="color: #4c4c10"></i></label></span>
-          <span><input id="radio-1" name="radio" type="radio" />
-            <label for="radio-1" class="radio-label"><i class="fa-solid fa-l" style="color: black"></i></label></span>
-        </form>
+            <?php endforeach?>
+            <!-- <span>
+              <input id="color_2" name="color" type="radio" />
+              <label for="color_2" class="radio-label">
+                <i class="fa-solid fa-shirt" style="color: #ea1026"></i>
+              </label>
+            </span> -->
+            
+          </div>
+
+          <!-- LUA CHON SIZE -->
+          <br>
+          <div>
+            <span class="">Size</span>
+            <?php 
+            $size = $method_size;
+            $size = explode(' ',$size);
+            // var_dump($size);
+            foreach($size as $key=>$item):
+              if($item != ""):
+            ?>
+            <span>
+              <input id="size_<?=$key+1?>" name="size" type="radio" value="<?=$item?>"/>
+              <label for="size_<?=$key+1?>" class="radio-label">
+                <span><?=$item?></span>
+              </label>
+            </span>
+            <?php endif?>
+            <?php endforeach?>
+            
+          </div>
+
         </div>
       </div>
 
@@ -116,125 +135,128 @@
 
       <!--THEM SO LUONG -->
       <div class="detail_quanity">
-        <button id="btn_minus" >
-          <i class="fa-solid fa-caret-down" style="color: #f8303a"></i>
+        <button class="btn_minus">
+          <i class="fas fa-minus"></i>
         </button>
-        <span class="" id="quantity_value">1</span>
+        <span id="quantity_value">1</span>
         <button class="btn_plus">
-          <i class="fa-solid fa-caret-up" style="color: #f8303a"></i>
+          <i class="fas fa-plus"></i>
         </button>
 
         <!-- Add to cart       -->
 
-        <input class="btn_add_cart" type="submit" value="Add to cart" />
+        <a href="" class="btn_add_cart" >Thêm vào giỏ hàng</a>
 
       </div>
-
+      <!-- </form> -->
       <hr />
 
-      <ul class="my-4">
+      <ul class="infor_soccial">
         <li>SKU: <a href="#">BE45VGRT</a></li>
         <li>Category: <a href="#">Clothing</a></li>
         <li>
           Tags: <a href="#" rel="tag">Cloth</a>,
           <a href="#" rel="tag">printed</a>
         </li>
+        <li>
+          <span class="soccial">
+            <i class="fa-brands fa-facebook-f" style="color: #85888e"></i>
+            <i class="ml-[16px] fa-brands fa-youtube" style="color: #85888e"></i>
+            <i class="ml-[16px] fa-solid fa-location-dot" style="color: #85888e"></i>
+            <i class="ml-[16px] fa-brands fa-google" style="color: #85888e"></i>
+          </span>
+        </li>
       </ul>
 
-      <span><i class="fa-brands fa-facebook-f" style="color: #85888e"></i>
-        <i class="ml-[16px] fa-brands fa-youtube" style="color: #85888e"></i>
-        <i class="ml-[16px] fa-solid fa-location-dot" style="color: #85888e"></i>
-        <i class="ml-[16px] fa-brands fa-google" style="color: #85888e"></i>
-      </span>
+
     </div>
   </div>
   <!-- binh luan  -->
   <div class="comment">
     <h3 class="">Comment:</h3>
-    <div class="content_commnet">
+    <div class="content_commneted">
+      <!-- danh sách đã comment -->
       <div class="group_commented">
-        <div class="img_comment">
-              <img src="../view/assets/img/fblogo.png" alt="">
+        <div class="info_commented">
+          <div class="img_commented">
+            <img src="../view/assets/img/fblogo.png" alt="" class="">
+          </div>
+          <div class="user_commented">
+            <p>Nguyễn Văn A</p>
+          </div>
         </div>
-        <div class="content_commneted">
-          <p>jhsajhdjshajdhj</p>
+        <div class="text_commented">
+          <p>Sản phẩm oke , không có gì phải chê</p>
         </div>
       </div>
+
+      <?php
+      if (isset($_SESSION['id_user'])) :
+        $user = load_one_tk($_SESSION['id_user']);
+        extract($user);
+      ?>
+        <!-- người mới comment -->
+        <form action="" method="post">
+          <div class="group_commented p_top">
+            <!-- thong tin nguoi dung comment -->
+            <div class="info_commented">
+              <div class="img_commented">
+                <img src="<?= $img ?>" alt="" class="">
+              </div>
+              <div class="user_commented">
+                <p><?= $user_name ?></p>
+              </div>
+            </div>
+            <!-- noi dung comment -->
+            <div class="text_commented">
+              <textarea name="" id="" cols="90" rows="5" placeholder="Bình luận ."></textarea>
+            </div>
+            <div>
+              <input type="submit" value="Đăng" class="btn_submit">
+            </div>
+          </div>
+        </form>
+      <?php else : ?>
+        <div class="alert_f">
+          <p>Vui lòng đăng nhập để thực hiện việc bình luận !</p>
+        </div>
+      <?php endif ?>
     </div>
   </div>
 
   <!-- San pham cung danh muc -->
-  <h1 class="font-semibold text-3xl">Sản Phẩm Liên Quan</h1>
-  <div class="grid grid-cols-4 gap-6">
-    <div class="border-[1px] border-solid border-gray-200 rounded-sm p-4 ">
-      <img class="" src="./img/áo_Mu_đỏ.png" alt="" />
-      <h4 class="font-semibold text-lg mt-4 duration-[0.25s] hover:text-red-500">
-        <a href="#">Áo MU</a>
-      </h4>
-      <div class="product_price my-3">
-        <span class="text-[#FF324D] font-semibold text-lg">$45.00</span>
-        <del class="text-gray-500 font-mono mx-2">$55.25</del>
-        <span class="text-[#388E3C] font-mono">35% Off</span>
-        <br />
-        <i class="fa-solid fa-star" style="color: #f5db38"></i>
-        <i class="fa-solid fa-star" style="color: #f5db38"></i>
-        <i class="fa-solid fa-star" style="color: #f5db38"></i>
-        <i class="fa-regular fa-star" style="color: #f5db38"></i>
-        <!-- <span class="rating_num">(21)</span> XEEPS HANG -->
-      </div>
-    </div>
-    <div class="border-[1px] border-solid border-gray-200 rounded-sm p-4">
-      <img class="" src="./img/áo_Mu_đỏ.png" alt="" />
-      <h4 class="font-semibold text-lg mt-4 duration-[0.25s] hover:text-red-500">
-        <a href="#">Áo MU</a>
-      </h4>
-      <div class="product_price my-3">
-        <span class="text-[#FF324D] font-semibold text-lg">$45.00</span>
-        <del class="text-gray-500 font-mono mx-2">$55.25</del>
-        <span class="text-[#388E3C] font-mono">35% Off</span>
-        <br />
-        <i class="fa-solid fa-star" style="color: #f5db38"></i>
-        <i class="fa-solid fa-star" style="color: #f5db38"></i>
-        <i class="fa-solid fa-star" style="color: #f5db38"></i>
-        <i class="fa-regular fa-star" style="color: #f5db38"></i>
-        <!-- <span class="rating_num">(21)</span> XEEPS HANG -->
-      </div>
-    </div>
+  <div class="wrapper">
+    <h1 class="">Sản Phẩm Liên Quan</h1>
+    <div class="product">
+      <?php foreach ($sp as $key => $item) :
+        extract($item);
+      ?>
+        <div class="item_product">
+          <a href="?act=detail_sp">
+            <div class="header_product">
+              <img src="<?= $img ?>" alt="" class="img_product" />
+              <a href="#" class="add_product">Thêm giỏ hàng</a>
+              <input type="text" name="" hidden class="id_product" value="<?= $id_sp ?>">
 
-    <div class="border-[1px] border-solid border-gray-200 rounded-sm p-4">
-      <img class="" src="./img/áo_Mu_đỏ.png" alt="" />
-      <h4 class="font-semibold text-lg mt-4 duration-[0.25s] hover:text-red-500">
-        <a href="#">Áo MU</a>
-      </h4>
-      <div class="product_price my-3">
-        <span class="text-[#FF324D] font-semibold text-lg">$45.00</span>
-        <del class="text-gray-500 font-mono mx-2">$55.25</del>
-        <span class="text-[#388E3C] font-mono">35% Off</span>
-        <br />
-        <i class="fa-solid fa-star" style="color: #f5db38"></i>
-        <i class="fa-solid fa-star" style="color: #f5db38"></i>
-        <i class="fa-solid fa-star" style="color: #f5db38"></i>
-        <i class="fa-regular fa-star" style="color: #f5db38"></i>
-        <!-- <span class="rating_num">(21)</span> XEEPS HANG -->
-      </div>
-    </div>
+            </div>
+          </a>
+          <a href="?act=detail_sp">
+            <div class="main_product">
+              <p class="name_product"><?= $ten_sp ?></p>
+              <div class="price">
+                <p class="init_price"><?= $gia_km ?></p><strong>đ</strong>
+                <p class="sale">
+                  <del><?= $gia_sp ?> <strong>đ</strong></del>
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      <?php endforeach ?>
+      <!-- end product -->
 
-    <div class="border-[1px] border-solid border-gray-200 rounded-sm p-4">
-      <img class="" src="./img/áo_Mu_đỏ.png" alt="" />
-      <h4 class="font-semibold text-lg mt-4 duration-[0.25s] hover:text-red-500">
-        <a href="#">Áo MU</a>
-      </h4>
-      <div class="product_price my-3">
-        <span class="text-[#FF324D] font-semibold text-lg">$45.00</span>
-        <del class="text-gray-500 font-mono mx-2">$55.25</del>
-        <span class="text-[#388E3C] font-mono">35% Off</span>
-        <br />
-        <i class="fa-solid fa-star" style="color: #f5db38"></i>
-        <i class="fa-solid fa-star" style="color: #f5db38"></i>
-        <i class="fa-solid fa-star" style="color: #f5db38"></i>
-        <i class="fa-regular fa-star" style="color: #f5db38"></i>
-        <!-- <span class="rating_num">(21)</span> XEEPS HANG -->
-      </div>
     </div>
   </div>
+
+
 </div>

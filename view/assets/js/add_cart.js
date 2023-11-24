@@ -1,5 +1,5 @@
-let btn_add_pr = document.querySelectorAll('.add_product');
-let cart_number = document.getElementById('cart_number');
+var btn_add_cart = document.querySelector('.btn_add_cart');
+var cart_number = document.getElementById('cart_number');
 var storage = JSON.parse(localStorage.getItem('toCart'));
 console.log(storage);
 if (storage == null) {
@@ -10,35 +10,48 @@ if (storage == null) {
     arrCart = storage;
     cart_number.textContent = arrCart.length
 }
-for (let i = 0; i < btn_add_pr.length; i++) {
-    btn_add_pr[i].addEventListener('click', function () {
-        let img_product = document.querySelectorAll('.img_product');
-        let name_product = document.querySelectorAll('.name_product');
-        let init_price = document.querySelectorAll('.init_price');
-        let id_product = document.querySelectorAll('.id_product');
-        let oj = {
-            id_pr: id_product[i].value,
-            name: name_product[i].textContent,
-            img: img_product[i].src,
-            price: init_price[i].textContent,
-            quannity: 1
-        };
-        let check = true;
-        arrCart.forEach(item => {
-            if (item.id_pr == oj.id_pr) {
-                item.quannity++;
-                localStorage.setItem('toCart', JSON.stringify(arrCart));
-                check = false;
-            }
-        });
-        if (check) {
-            arrCart.push(oj);
-            localStorage.setItem('toCart', JSON.stringify(arrCart));
-            cart_number.textContent = arrCart.length
-        }
 
+btn_add_cart.addEventListener('click', function () {
+    let img_product = document.querySelector('.img_product');
+    let name_product = document.querySelector('.name_product');
+    let init_price = document.querySelector('.init_price');
+    let id_product = document.querySelector('.id_product');
+    let color = document.querySelector('input[name=color]:checked');
+    let size = document.querySelector('input[name=size]:checked');
+    let checkSize = document.querySelector('input[name=size]');
+    let quantity_value =document.querySelector('#quantity_value');
+    let size_sp = '';
+    if (checkSize != null) {
+        size_sp = size;
+    } else {
+        size_sp = '0';
+    }
+    let oj = {
+        id_pr: id_product.value,
+        name: name_product.textContent,
+        img: img_product.src,
+        price: init_price.textContent,
+        color: color.value,
+        size: size.value,
+        quannity: quantity_value.textContent
+    };
+    console.log(oj);
+    let check = true;
+    arrCart.forEach(item => {
+        if (item.id_pr == oj.id_pr) {
+            item.quannity++;
+            localStorage.setItem('toCart', JSON.stringify(arrCart));
+            check = false;
+        }
     });
-}
+    if (check) {
+        arrCart.push(oj);
+        localStorage.setItem('toCart', JSON.stringify(arrCart));
+        cart_number.textContent = arrCart.length
+    }
+
+});
+
 
 
 function renderCart() {
@@ -98,9 +111,9 @@ function plusQuannity(i) {
     let id = id_product[i].value;
     value++
     quantity_value[i].textContent = value;
-    
-    arrCart.forEach(e =>{
-        if(e.id_pr == id){
+
+    arrCart.forEach(e => {
+        if (e.id_pr == id) {
             e.quannity++
             localStorage.setItem('toCart', JSON.stringify(arrCart));
         }
@@ -113,23 +126,25 @@ function minusQuannity(i) {
     let id_product = document.querySelectorAll('.id_product');
     let value = quantity_value[i].textContent;
     let id = id_product[i].value;
-    value--
-    quantity_value[i].textContent = value;
-    
-    arrCart.forEach(e =>{
-        if(e.id_pr == id){
-            e.quannity--
-            localStorage.setItem('toCart', JSON.stringify(arrCart));
-        }
-    })
+    if (value > 0) {
+        value--
+        quantity_value[i].textContent = value;
+        arrCart.forEach(e => {
+            if (e.id_pr == id) {
+                e.quannity--
+                localStorage.setItem('toCart', JSON.stringify(arrCart));
+            }
+        })
+    }
+
 }
-function delCart (i) {  
+function delCart(i) {
     let id_product = document.querySelectorAll('.id_product');
-    arrCart.forEach((e,index) =>{
-        if(e.id_pr == id_product[i].value){
-arrCart.splice(index,1);
-localStorage.setItem('toCart', JSON.stringify(arrCart));
-cart_number.textContent = arrCart.length
+    arrCart.forEach((e, index) => {
+        if (e.id_pr == id_product[i].value) {
+            arrCart.splice(index, 1);
+            localStorage.setItem('toCart', JSON.stringify(arrCart));
+            cart_number.textContent = arrCart.length
         }
     })
 }

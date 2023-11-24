@@ -1,6 +1,9 @@
 .hovershirt {
     display: none;
-}   
+}  
+.p_top{
+    padding-top: 2rem;
+} 
 .chitietsanpham-color input[type="radio"] {
     display: none;
 }
@@ -92,44 +95,73 @@
 .header_detail{
     padding-bottom: 1.5rem;
 }
+.header_detail>p{
+font-size: 1.75rem;
+}
 .detail_main{
     padding-bottom: 1.5rem;
 }
-.price_detail{
+.price_detail,.price_unit{
     font-size: 32px;
     font-weight: 700;
     color: red;
-    margin: 0 1rem;
+    margin: 0;
 }
+
 .detail_rainting{
     padding: 0 20px;
 }
 .detail_text{
     padding-bottom: 1.5rem;
     opacity: 0.8;
+
+}
+.detail_text>textarea{
+    padding: 5px 2rem 5px 5px;
+    border: 1px solid gray;
+    height: fit-content;
 }
 .detail_function li{
     padding: 0.5rem 0;
 }
+.infor_soccial li{
+    padding: 1rem 0;
+}
+.soccial i{
+    padding: 0 10px;
+    font-size: 2rem;
+}
 .detail_quanity{
     margin: 2rem 0;
 }
-/* .detail_quanity button,.detail_quanity span,.detail_quanity input{
-    padding: 1rem;
-} */
+.detail_quanity button{ 
+    width: 2rem;
+    overflow: hidden;
+}
 .detail_quanity button{
-    font-weight: 900;
-    font-size: 20px;
-    border: none;
-    background-color: antiquewhite;
-    padding: 5px 10px;
-    border-radius: 50%;
-    cursor: pointer;
+padding: 5px;
+cursor: pointer;
+background-color: rgb(87, 87, 171);
+border: none;
+border-radius: 10px;
+transition: 0.3s all;
 }
-.detail_quanity span{
+.detail_quanity button:hover{
+    transform: translateY(-3px);
+    color: rgb(48, 48, 97);
+    box-shadow: 0 5px 5px gray;
+}
+.detail_quanity button i{
+    font-weight: 700;
+    color: aliceblue;
+    font-size: 1rem;
+}
+.detail_quanity span:nth-child(2){
     border: 1px solid gray;
-    padding: 5px 30px;
+    padding: 6px 30px;
+    border-radius: 5px;
 }
+
 .btn_add_cart{
     margin-left: 2rem;
     padding: 0.5rem 1rem;
@@ -153,7 +185,68 @@ margin: 1rem 0;
 .comment{
     margin: 10px 2rem;
 }
-.content_commnet{
+.comment>h3{
+    padding: 1rem;
+}
+.content_commneted{
     border: 0.5px solid rgb(173, 173, 173);
+    padding: 1rem;
     /* min-height: 300px; */
+}
+
+.group_commented{
+    display: grid;
+    grid-template-columns: 10% 50% 5%;
+    gap: 1rem;
+    border-bottom: 1px solid gray;
+}
+.info_commented {
+    width: 100%;
+    height: 100%;
+   border-right: 1px solid gray;
+}
+.user_commented>p{
+    text-align: center;
+    padding: 0.5rem 0;
+    color: #646566;
+    font-size: 12px;
+}
+.img_commented{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+.img_commented>img{
+    width: 3rem;
+    border-radius: 50%;
+}
+.text_commented>textarea{
+    padding: 0.5rem;
+}
+.btn_submit{
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(47, 114, 220);
+    color: #fff;
+    font-weight: 700;
+    transition: 0.3s;
+}
+.btn_submit:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 5px 5px gray;
+    background-color: blue;
+}
+
+/* sp cùng danh mục */
+.wrapper{
+    width: 80%;
+    margin: 2rem auto;
+}
+.wrapper>h1{
+    text-align: center;
+    margin: 2rem 0;
 }

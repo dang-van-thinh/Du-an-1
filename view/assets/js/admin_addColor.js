@@ -33,9 +33,6 @@ function add_color() {
     colorDiv.appendChild(valueInput);
     colorDiv.appendChild(deleteButton);
 
-    // // Thêm input vào div
-    // colorDiv.appendChild(nameInput);
-    // colorDiv.appendChild(valueInput);
 
     // Thêm div mới vào show_color
     showColor.appendChild(colorDiv);
