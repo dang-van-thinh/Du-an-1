@@ -47,6 +47,14 @@ header {
     z-index: 9999;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+.alert_f{
+    padding: 20px;
+    background-color: rgb(235, 85, 85);
+    width: fit-content;
+    border-radius: 5px;
+    margin: 5px;
+}
+
 header .logo {
     width: 120px;
 }
@@ -265,6 +273,7 @@ header .logo {
 }
 .item_product{
     max-width: 15rem;
+    max-height: 20rem;
     margin: 0.5rem;
 }
 .item_product .name_product, .price{
@@ -279,8 +288,11 @@ header .logo {
 
 .header_product{
     width: 100%;
+    height: 12rem;
    position: relative;
    display: block;
+   max-height: 200px;
+   overflow: hidden;
 }
 .add_product{
     position: absolute;
@@ -501,7 +513,11 @@ footer {
     padding: 30px 150px;
 }
 
-
+.main_toasct{
+    position: absolute;
+    right: 0.75rem;
+    top: 0;
+}
 .toasct_custom{
     padding: 5px 10px ;
     color: #ffff;

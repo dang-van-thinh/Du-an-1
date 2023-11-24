@@ -44,7 +44,11 @@
     color: var(--text-hover);
 }
 
-
+.main_toasct{
+    position: absolute;
+    right: 0.75rem;
+    top: 0;
+}
 .toasct_custom{
     padding: 5px 10px ;
     color: #ffff;
@@ -59,6 +63,8 @@
     top: 5rem;
     transition: 0.5s;
     cursor: default;
+    position: relative;
+    z-index: 999;
 }
 .toasct_active{
     /* transform: translateX(150%); */

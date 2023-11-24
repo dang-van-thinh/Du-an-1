@@ -46,28 +46,31 @@
 
     <!-- Top 10 trending items -->
     <div class="top10-products">
-        <h1 class="top10-title">Top sản phẩm được yêu thích nhất</h1>
+        <h1 class="top10-title">Top sản phẩm mới nhất</h1>
         
         <div class="product">
         <?php foreach($sp as $key => $item):
             extract($item);
             ?>
             <div class="item_product">
-                <a href="?act=detail_sp">
+
+
+                <a href="?act=detail_sp&id_sp=<?= $id_sp?>">
+
                     <div class="header_product">
                         <img src="<?= $img?>" alt="" class="img_product" />
-                        <a href="#" class="add_product">Thêm giỏ hàng</a>
-                        <input type="text" name="" hidden class="id_product" value="<?=$id_sp?>">
+                        <a href="?act=detail_sp&id_sp=<?= $id_sp?>" class="add_product">Xem chi tiết</a>
+                        <input type="text" name="" hidden class="id_product" value="">
 
                     </div>
                 </a>
-                <a href="?act=detail_sp">
+                <a href="?act=detail_sp&id_sp=<?= $id_sp?>">
                     <div class="main_product">
                         <p class="name_product"><?= $ten_sp?></p>
                         <div class="price">
-                            <p class="init_price"><?= $gia_sp?></p><strong>đ</strong>
+                            <p class="init_price"><?= $gia_km?></p><strong>đ</strong>
                             <p class="sale">
-                                <del><?= $gia_km?> <strong>đ</strong></del>
+                                <del><?=  $gia_sp?> <strong>đ</strong></del>
                             </p>
                         </div>
                     </div>
@@ -109,27 +112,31 @@
         
             extract($item);
             ?>
-            <div class="item_product">
-                <a href="?act=detail_sp">
+               <div class="item_product">
+
+
+                <a href="?act=detail_sp&id_sp=<?= $id_sp?>">
+
                     <div class="header_product">
                         <img src="<?= $img?>" alt="" class="img_product" />
-                        <a href="#" class="add_product">Thêm giỏ hàng</a>
-                        <input type="text" name="" hidden class="id_product" value="<?=$id_sp?>">
+                        <a href="?act=detail_sp&id_sp=<?= $id_sp?>" class="add_product">Xem chi tiết</a>
+                        <input type="text" name="" hidden class="id_product" value="">
 
                     </div>
                 </a>
-                <a href="?act=detail_sp">
+                <a href="?act=detail_sp&id_sp=<?= $id_sp?>">
                     <div class="main_product">
                         <p class="name_product"><?= $ten_sp?></p>
                         <div class="price">
-                            <p class="init_price"><?= $gia_sp?></p><strong>đ</strong>
+                            <p class="init_price"><?= $gia_km?></p><strong>đ</strong>
                             <p class="sale">
-                                <del><?= $gia_km?> <strong>đ</strong></del>
+                                <del><?=  $gia_sp?> <strong>đ</strong></del>
                             </p>
                         </div>
                     </div>
                 </a>
             </div>
+            
             <?php endforeach ?>
             <!-- end product -->
             

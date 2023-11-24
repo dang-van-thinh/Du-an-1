@@ -68,15 +68,15 @@
                             <label for="color_no" class="form-label">Sản phẩm không có màu</label>
                             <input type="checkbox" name="color_no" id="color_no" class="form-check-input" value="0">
                         </div>
-                        <div class="input-group">
+                        <!-- <div class="input-group">
                             <input type="text" name="name_color[]" id="" placeholder="Tên màu">
                             <input type="color" name="value_color[]" id="">
-                        </div>
-                       
+                            <button>xóa</button>
+                        </div> -->
                         <div class="mt-3" id="show_color">
 
                         </div>
-                        <p class="btn btn-success mt-3" id="add_color">Thêm mới</p>
+                        <p class="btn btn-success mt-3" id="add_color">Thêm màu</p>
 
                     </div>
 
