@@ -4,6 +4,7 @@ ob_start();
 require_once '../model/PDO.php';
 require_once '../model/GetDB.php';
 require_once '../model/Insert.php';
+require_once '../model/Login.php';
 require_once '../func/check_form.php';
 
 
@@ -40,7 +41,7 @@ if(isset($_GET['lg'])){
                         }
                     }
                 }else{
-                    setcookie('toasct_f',$check,time()+3,'/');
+                    setcookie('alert_f',$check,time()+3,'/');
                     header('location: ?lg=login');
                 }
                 
@@ -49,6 +50,22 @@ if(isset($_GET['lg'])){
             include '../view/client/login/login.php';
         break;
         case 'sigin':
+            if(isset($_POST['signin']) && $_POST['signin']){
+                $email_sigin = $_POST['email'];
+                $user_sigin = $_POST['name_user'];
+                $pw_sigin = $_POST['pw'];
+                $phone_sigin = $_POST['number_phone'];
+                $error = check_form_sigin($email_sigin,$user_sigin,$phone_sigin,$pw_sigin);
+                if( $error != ''){
+                    setcookie('alert_f',$error,time()+3,'/');
+                    header("Location: ?lg=sigin");
+                    exit;
+                }else{
+                    setcookie('toasct_s','Bạn đã đăng ký thành công tài khoản . Giờ hãy tiến hành đăng nhập nhé !',time()+3,'/');
+                    header('location: ?lg=login');
+                }
+
+            }
             include '../view/client/login/signin.php';
         break;
         case 'forgot':

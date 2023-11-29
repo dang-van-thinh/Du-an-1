@@ -85,11 +85,15 @@
     gap: 1.5rem;
 }
 .detail_img{
-    max-width: 50rem;
+    max-width: 100%;
     overflow: hidden;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.detail_img img{
-    width: 100%;
+.detail_img>img{
+    width: 30rem;
     display: block;
 }
 .header_detail{
@@ -170,14 +174,14 @@ transition: 0.3s all;
     border-radius: 10px;
     cursor: pointer;
     color: rgb(182, 185, 187);
-    transition: 0.5s;
+    transition: 0.3s;
     font-weight: 700;
 }
 .btn_add_cart:hover{
     background-color: red;
     color: aliceblue;
     transform: translateY(-3px);
-    box-shadow: 0 5px 5px gray;
+    box-shadow: 0 10px 10px gray;
 }
 .detail_method form{
 margin: 1rem 0;
@@ -249,4 +253,7 @@ margin: 1rem 0;
 .wrapper>h1{
     text-align: center;
     margin: 2rem 0;
+}
+.grid_item{
+    border-right: 1px solid gray;
 }

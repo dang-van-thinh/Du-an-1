@@ -36,6 +36,21 @@ function check_form_login($email,$password){
     return $error;
 }
 
+
+//check form sigin
+function check_form_sigin($email,$ten,$phone,$password){
+    $error = '';
+    if($email == '' || $ten=='' || $phone == '' || $password == ''){
+        $error = 'Không được để trống thông tin !';
+    }else{
+        if(strlen($phone)>10 || strlen($phone) <10){
+            $error = 'Vui lòng nhập đúng số điện thoại !';
+        }elseif(strlen($password)<6){
+            $error= 'Mật khẩu phải lớn hơn 6 ký tự';
+        }
+    }
+    return $error;
+}
 // check add sp
 function check_add_sp($name_sp,$price_sp,$price_km,$loai_sp,$quanity_sp,$mota_sp,$date_sp,$img){
     $error = "";

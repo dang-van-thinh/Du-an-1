@@ -1,11 +1,10 @@
-
 <!-- chi tiết sản phẩm  -->
 <div class="margin_top ">
   <div class="product_detail_grap">
     <div class="grid_item">
       <!-- chỗ dữ liệu ảnh từng sản phẩm khi ấn xem chi tiết sản phẩm -->
       <div class="detail_img">
-        <img src="../view/assets/img/bong-2.webp" alt="Ảnh sản phẩm" id="img_product" id="product-image" />
+        <img src="<?= $img ?>" alt="Ảnh sản phẩm" id="img_product" id="product-image" />
       </div>
 
       <!-- các ảnh bổ sung của sản phẩm  -->
@@ -47,19 +46,19 @@
       <div class="product_description">
         <h4 class="header_detail">
           <p class="name_product"><?= $ten_sp ?></p>
-          <input type="hidden" name="id_product" value="<?= $id_sp ?>">
+          <input type="hidden" name="id_product" id="id_product" value="<?= $id_sp ?>">
         </h4>
         <div class="detail_main">
-          
-            <span class="price_detail init_price"><?= $gia_sp ?> </span><span class="price_unit">VND</span>
-          
-          <del class=""><?=$gia_km?>VND</del>
-         
+
+          <span class="price_detail " id="init_price"><?= $gia_km ?> </span><span class="price_unit">VND</span>
+
+          <del class="" id="start_price"><?= $gia_sp?></del> <span>VND</span>
+
         </div>
 
         <div class="detail_text">
           <textarea class="" rows="10" cols="90" readonly>
-            <?=$mo_ta?>
+            <?= $mo_ta ?>
           </textarea>
         </div>
         <div class="">
@@ -84,48 +83,50 @@
           <!-- <form action="" method="get"> -->
           <div>
             <span class="">Color</span>
-            <?php 
+            <?php
             $color = $method_color;
             $color = json_decode($color);
             // var_dump($color);
-            foreach($color as $name=>$value):
+            foreach ($color as $name => $value) :
             ?>
-            <span>
-              <input id="<?=$name?>" name="color" type="radio" value="<?=$name?>"/>
-              <label for="<?=$name?>" class="radio-label">
-                <i class="fa-solid fa-shirt" style="color:<?=$value?>"></i>
-              </label>
-            </span>
-            <?php endforeach?>
+              <span>
+                <input id="<?= $name ?>" name="color" type="radio" value="<?= $name ?>" />
+                <label for="<?= $name ?>" class="radio-label">
+                  <i class="fa-solid fa-shirt" style="color:<?= $value ?>"></i>
+                </label>
+              </span>
+            <?php endforeach ?>
             <!-- <span>
               <input id="color_2" name="color" type="radio" />
               <label for="color_2" class="radio-label">
                 <i class="fa-solid fa-shirt" style="color: #ea1026"></i>
               </label>
             </span> -->
-            
+
           </div>
 
           <!-- LUA CHON SIZE -->
           <br>
           <div>
             <span class="">Size</span>
-            <?php 
+            <?php
             $size = $method_size;
-            $size = explode(' ',$size);
+            $size = explode(' ', $size);
+            if(count($size)>0):
             // var_dump($size);
-            foreach($size as $key=>$item):
-              if($item != ""):
+            foreach ($size as $key => $item) :
+              if ($item != '') :
             ?>
-            <span>
-              <input id="size_<?=$key+1?>" name="size" type="radio" value="<?=$item?>"/>
-              <label for="size_<?=$key+1?>" class="radio-label">
-                <span><?=$item?></span>
-              </label>
-            </span>
-            <?php endif?>
-            <?php endforeach?>
-            
+                <span>
+                  <input id="size_<?= $key + 1 ?>" name="size" type="radio" value="<?= $item ?>" />
+                  <label for="size_<?= $key + 1 ?>" class="radio-label">
+                    <span><?= $item ?></span>
+                  </label>
+                </span>
+              <?php endif ?>
+            <?php endforeach ?>
+            <?php endif ?>
+
           </div>
 
         </div>
@@ -146,7 +147,7 @@
 
         <!-- Add to cart       -->
 
-        <a href="" class="btn_add_cart" >Thêm vào giỏ hàng</a>
+        <a href="" class="btn_add_cart" id="btn_add_cart">Thêm vào giỏ hàng</a>
 
       </div>
       <!-- </form> -->
@@ -261,4 +262,3 @@
 
 
 </div>
-

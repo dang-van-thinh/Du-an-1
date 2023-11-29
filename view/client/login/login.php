@@ -1,6 +1,6 @@
 <body>
     <div class="wrapper">
-        <form action="?lg=login" method="post" class="">
+        <form action="?lg=login" method="post" onsubmit="return check_login()">
             <div class="card item_center" style="width: 30rem;">
                 <div class="card-header text-center">
                     <h4 class="fw-bold">Đăng nhập</h4>

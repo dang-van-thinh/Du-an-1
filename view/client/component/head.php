@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../view/assets/css/product_list.css" />
 
   <link rel="stylesheet" href="../view/assets/css/product_detail.css" />
-
+  <link rel="stylesheet" href="../view/assets/css/order.css" />
   
   <title>Sport Da1</title>
 </head>

@@ -36,17 +36,33 @@ if (isset($_GET['act'])) {
             include '../view/client/page/detail_sp.php';
             break;
         case 'product':
-            $sp = load_all_sp(0,0,10);
+            if(isset($_GET['id_dm'])){
+                $id_dm = $_GET['id_dm'];
+                $sp = load_sp_dm($id_dm);
+            }
+            
                 include '../view/client/page/product.php';
                 break;  
         case 'gioithieu':
             include '../view/client/page/gioithieu.php';
+            break;
+        case 'order':
+            // if(isset($_POST['dat_hang']))
+            if(isset($_SESSION['id_user'])){
+                $user = load_one_tk($_SESSION['id_user']);
+                extract($user);
+            }
+            
+            include '../view/client/page/order.php';
             break;
         case 'lienhe':
                 include '../view/client/page/lienhe.php';
                 break;
         case 'login':
             header('location: login.php');
+            break;
+        case 'sigin':
+            header('location: login.php?lg=sigin');
             break;
         case 'logout':
             unset($_SESSION['id_user'],$_SESSION['role']);
