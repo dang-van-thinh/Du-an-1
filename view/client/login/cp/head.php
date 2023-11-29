@@ -10,4 +10,5 @@
     <link rel="stylesheet" href="../view/assets/css/style.css">
     <link rel="stylesheet" href="../view/assets/css/admin.css">
     <script src="../view/assets/js/toasct.js"></script>
+    <script src="../view/assets/js/login_sigin.js"></script>
 </head>

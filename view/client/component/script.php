@@ -94,5 +94,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     });
     </script>
 
-<script src="../view/assets/js/product_detail.js"></script>
+
 <script src="../view/assets/js/add_cart.js"></script>
+<script src="../view/assets/js/cart.js"></script>
+<script src="../view/assets/js/order.js"></script>

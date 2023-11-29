@@ -1,0 +1,87 @@
+.unclickable {
+    color: #ccc !important;
+}
+.cart-content-order{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.express{
+    margin-top: 20px;
+    line-height: 60px;
+    padding-left: 10px;
+    border: 1px solid grey;
+    border-radius: 20px 0px;
+}
+.pttt{
+    margin-top: 30px;
+}
+.pay .content {
+    border: 1px solid grey;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    margin-top: 20px;
+}
+.content .hihi{
+   font-size: 14px;
+   font-style: normal;
+    align-items: center;
+    margin: 20px ;
+}
+.content .free-ship {
+    display: flex;  
+    font-size: 14px;
+    margin: 20px;
+    gap: 10px;
+    
+}
+.visa,
+.momo,
+.mater{
+   width: 30px;
+   height: 25px
+}
+.infomation {
+    margin-top: 20px;
+}
+.infomation input {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    margin-top: 10px;
+}
+.infomation button {
+    width: 423px;
+    text-align: center;
+    position: absolute;
+    top: 330px;
+    right: 0;
+    padding: 14px 0;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background: #000;
+    color: #fff;
+    border: 2px solid #000;
+    transition: 0.25s;
+    font-size: 20px;
+    font-weight: 600;
+}
+.infomation button:hover {
+    color: #000;
+    background: #fff;
+}
+.input_check_fail{
+    border: 2px solid red;
+}
+.input_check_fail:focus{
+    border: 2px solid red;
+}
+.input_check_success{
+    border: 2px solid green;
+}
+.input_check_success:focus{
+    border: 2px solid green;
+}
+.disable{
+    color: rgb(161, 161, 161);
+}

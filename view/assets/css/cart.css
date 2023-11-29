@@ -154,3 +154,13 @@
 #btn_submit:hover{
     transform: translateY(-3px);
 }
+.btn_update_cart{
+    padding: 0.5rem 1rem;
+    border: 1px solid rgb(95, 95, 220);
+    transition: 0.3s;
+}
+.btn_update_cart:hover{
+    background-color: rgb(95, 95, 220);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 5px gray;
+}

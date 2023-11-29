@@ -15,10 +15,7 @@
           extract($item);
         ?>
           <li>
-
-            <a href="?act=product"><?= $ten_loai?><i class="fa-solid fa-chevron-down"></i></i></a>
-            
-
+            <a href="?act=product&id_dm=<?= $id_loai ?>"><?= $ten_loai ?><i class="fa-solid fa-chevron-down"></i></i></a>
             <ul class="subnav">
               <?php foreach (load_dm_type($id_loai, false) as $key => $item_c) :
                 extract($item_c);
@@ -26,16 +23,12 @@
                 <li><a href="?act=product&id_dm=<?= $id_loai ?>"><?= $ten_loai ?></a></li>
               <?php endforeach ?>
             </ul>
-
-
           </li>
 
-       
-          
-          <?php endforeach ?>
-          
-          <li><a href="?act=gioithieu">Giới thiệu</a></li>
-          <li><a href="?act=lienhe">Liên hệ</a></li>
+        <?php endforeach ?>
+
+        <li><a href="?act=gioithieu">Giới thiệu</a></li>
+        <li><a href="?act=lienhe">Liên hệ</a></li>
 
 
       </ul>
@@ -72,7 +65,7 @@
           </div>
           <div class="account-option">
             <a href="?act=login">Đăng nhập</a>
-            <a href="signout.html">Đăng ký</a>
+            <a href="?act=sigin">Đăng ký</a>
             <!-- <a href="">Chỉnh sửa tài khoản</a> -->
             <!-- <a href="?act=logout">Đăng xuất</a> -->
           </div>
