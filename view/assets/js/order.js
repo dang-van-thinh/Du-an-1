@@ -24,13 +24,44 @@ function htmlBillCart () {
     console.log(totalProduct);
  }
  htmlBillCart();
-document.querySelector('#hoan_thanh').addEventListener('submit',function (e) { 
-    let name_user = document.getElementById('name_user');
-if(name_user.value == ''){
-    
-    name_user.style.border = '2px solid red'
-    e.preventDefault();
-}else{
-    name_user.style.border = '2px solid green'
+
+ function check_order(){ 
+    let email_order = document.getElementById('email_order');
+    let address_order = document.getElementById('address_order');
+    let number_phone_order = document.getElementById('number_phone_order');
+    let user_name_order = document.getElementById('user_name_order');
+let check = true;
+    if(user_name_order.value == ""){
+        user_name_order.style.border = '2px solid red';
+        check =  false;
+    }else{
+        user_name_order.style.border = 'none';
+        check = true;
+    }
+// check validate address
+
+if(address_order.value == ""){ 
+    address_order.style.border = '2px solid red';
+    check = false;
+}else {
+    address_order.style.border = 'none';
+    check = true;
 }
- })
+
+if(email_order.value == ""){ 
+    email_order.style.border = '2px solid red';
+    check = false;
+}else {
+    email_order.style.border = 'none';
+    check = true;
+}
+
+if(number_phone_order.value == ""){ 
+    number_phone_order.style.border = '2px solid red';
+    check = false;
+}else {
+    number_phone_order.style.border = 'none';
+    check = true;
+}
+return check;
+ }

@@ -20,4 +20,19 @@ function insert_sp($name_sp,$price_sp,$price_km,$loai_sp,$quanity_sp,$mota_sp,$d
     pdo_excute($sql);
 }
 
+// thêm đơn hàng mới
+function add_order_ct($id_sp,$id_hd,$price,$quanity,$color,$size){
+    $sql = "INSERT INTO ct_hd(id_sp,id_hd,gia,sl_mua,color,size) 
+    values('$id_sp','$id_hd','$price','$quanity','$color','$size')";
+    pdo_excute($sql);
+}
+
+//thêm mới vào bảng hoa_don
+function add_hoa_don($id_user,$date,$pay){
+    $sql = "INSERT INTO hoa_don (id_user,ngay_mua,pay) values('$id_user','$date','$pay')";
+    pdo_excute($sql);
+    return true;
+}
+
+
 ?>

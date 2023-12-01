@@ -59,4 +59,19 @@ function check_add_sp($name_sp,$price_sp,$price_km,$loai_sp,$quanity_sp,$mota_sp
     }
     return $error;
 }
+
+
+// check form order
+function check_form_order($name_order,$number_phone_order,$address_order,$email_order){
+    $error = '';
+    if ($name_order == '' || $email_order == '' || $number_phone_order == '' || $address_order == '') {
+        $error = 'Không được để trống trường thông tin nào !';
+    }else{
+        if(strlen($number_phone_order) < 10 || strlen($number_phone_order) > 10){
+            $error = 'Sai định dạng số điện thoại';
+        }
+        
+    }
+    return $error;
+}
 ?>
