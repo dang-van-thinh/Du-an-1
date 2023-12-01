@@ -2,7 +2,7 @@
     grid-template-columns: repeat(4, 1fr);
 }
 .product-list-content {
-    margin: 150px;
+    margin: 150px 0;
     display: grid;
     gap: 30px;
     grid-template-columns: 24% 74%;

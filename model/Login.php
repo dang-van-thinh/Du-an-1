@@ -7,7 +7,7 @@ function check_login($email,$password){
 }
 
 function check_sigin($email){
-    $sql = "SELECT email FROM user WHERE email='$email";
+    $sql = "SELECT email FROM user WHERE email='$email'";
     return pdo_query_one($sql);
 }
 ?>

@@ -71,7 +71,9 @@
           <p class="no-ship"><i class="fa-solid fa-triangle-exclamation"></i> Miễn phí ship với đơn hàng trên 500.000 VNĐ</p>
           <p class="free-ship"><i class="fa-solid fa-circle-check"></i> Đơn hàng của bạn được miễn phí ship</p>
 
-          <input type="hidden" name="">
+          <div id="un_dat_hang">
+
+          </div>
           <input type="submit" class="submit-btn"  name="dat_hang" value="Đặt hàng"  <?= isset($_SESSION['id_user']) ? '':'disabled'; ?>>
 
         </div>
