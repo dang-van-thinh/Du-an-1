@@ -82,4 +82,44 @@ function load_sp_dm($id_dm){
     $sql = "SELECT * FROM san_pham WHERE id_loai=$id_dm";
     return pdo_query($sql);
 }
+
+// lấy thông tin order
+function load_id_hd($id_user){
+    $sql = "SELECT * FROM hoa_don WHERE id_user ='$id_user' order by ngay_mua DESC";
+    return pdo_query_value($sql);
+}
+
+
+// lấy thông tin ordered
+function load_all_hd(){
+    $sql = "SELECT hd.*,ct.* FROM hoa_don hd JOIN ct_hd ct
+    ON hd.id_hd = ct.id_hd group by hd.id_hd order by ngay_mua DESC";
+    return pdo_query($sql);
+}
+function load_one_hd($id_hd =0 ){
+    $sql = "SELECT hd.*,kh.* FROM hoa_don hd JOIN  user kh
+    ON hd.id_user = kh.id_user ";
+    if($id_hd > 0){
+        $sql .= " WHERE id_hd=$id_hd ";
+    }else{
+        $sql .= " WHERE 1 ";
+    }
+    $sql .= " order by hd.id_hd desc limit 1 ";
+    return pdo_query_one($sql);
+}
+
+function load_ct_hd ($id_hd){
+    $sql = "SELECT * FROM ct_hd ct JOIN san_pham sp
+    ON ct.id_sp = sp.id_sp
+     WHERE ct.id_hd ='$id_hd' ";
+    return pdo_query($sql);
+}
+// thống kê hóa đơn
+// phần thóng kê home
+function load_tt_hd($tt){
+ $sql = "SELECT count(*) as sl FROM hoa_don where trang_thai='$tt'";
+
+ return pdo_query_value($sql);
+}
+
 ?>

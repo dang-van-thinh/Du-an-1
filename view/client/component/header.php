@@ -15,7 +15,7 @@
           extract($item);
         ?>
           <li>
-            <a href="?act=product&id_dm=<?= $id_loai ?>"><?= $ten_loai ?><i class="fa-solid fa-chevron-down"></i></i></a>
+            <a href="#"><?= $ten_loai ?><i class="fa-solid fa-chevron-down"></i></i></a>
             <ul class="subnav">
               <?php foreach (load_dm_type($id_loai, false) as $key => $item_c) :
                 extract($item_c);
@@ -53,7 +53,8 @@
             <span><?= load_one_tk($_SESSION['id_user'])['user_name'] ?></span>
           </div>
           <div class="account-option">
-            <a href="">Chỉnh sửa tài khoản</a>
+          <a href="?act=infor_order">Thông tin đơn hàng</a>
+            <a href="?act=infor_user">Chỉnh sửa tài khoản</a>
             <a href="?act=logout" onclick="return confirm('Bạn có chắc muốn đăng xuất không ?')">Đăng xuất</a>
           </div>
         </div>

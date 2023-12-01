@@ -5,13 +5,13 @@
             <!-- small box -->
             <div class="small-box bg-info">
                 <div class="inner">
-                    <h3>150</h3>
-                    <p>New Orders</p>
+                    <h3><?= $tt_0?></h3>
+                    <p>Hóa đơn chờ kiểm duyệt</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-shopping-bag"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="?ad=thong_ke" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -19,9 +19,8 @@
             <!-- small box -->
             <div class="small-box bg-success">
                 <div class="inner">
-                    <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                    <p>Bounce Rate</p>
+                <h3><?= $tt_3?></h3>
+                    <p>Đã bán</p>
                 </div>
                 <div class="icon">
                     <i class="far fa-chart-bar"></i>
@@ -34,14 +33,14 @@
             <!-- small box -->
             <div class="small-box bg-warning">
                 <div class="inner">
-                    <h3>44</h3>
+                    <h3><?= $user?></h3>
 
-                    <p>User Registrations</p>
+                    <p>Người dùng đăng ký mới</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-user-plus"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="?ad=list_tk" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -51,7 +50,7 @@
                 <div class="inner">
                     <h3>65</h3>
 
-                    <p>Unique Visitors</p>
+                    <p>Thống kê</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-chart-pie"></i>

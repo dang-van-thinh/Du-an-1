@@ -36,3 +36,15 @@ function edit_sp(
     method_color='$method_color',method_size='$method_size',id_loai='$loai_sp' WHERE id_sp='$id_sp'";
     pdo_excute($sql);
 }
+// update bảng hóa đơn
+//update tong sp có trong hoa don do
+function update_tong_sp_hd($tong_sp,$id_hd){
+    $sql = "UPDATE hoa_don SET tong_dh = '$tong_sp' where id_hd=$id_hd";
+    pdo_excute($sql);
+}
+// update trang thai don hang
+function update_tt_dh($id_hd,$tt){
+    $sql = "UPDATE hoa_don SET trang_thai = '$tt' where id_hd=$id_hd";
+    pdo_excute($sql);
+}
+?>

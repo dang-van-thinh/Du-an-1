@@ -39,18 +39,19 @@ btn_add_cart.addEventListener('click', function () {
     let id_product = document.querySelector('#id_product');
     let color = document.querySelector('input[name=color]:checked');
     let size = document.querySelector('input[name=size]:checked');
+    
     let start_price = document.querySelector('#start_price');
-    // let checkSize = document.querySelector('input[name=size]');
+    let checkSize = document.querySelector('input[name=size]');
     let quantity_value = document.querySelector('#quantity_value');
 
     let check = true;
+    let size_sp = 0;
 
-    // if (checkSize != null) {
-    //     size_sp = size;
-    // } else {
-    //     size_sp = 0;
-    // }
+    if (checkSize != null) {
+        size_sp = size.value;
+    }
     
+  
 
     // check trùng lặp trong giỏ hàng
     if (arrCart.length > 0) {
@@ -67,9 +68,6 @@ btn_add_cart.addEventListener('click', function () {
         });
     }
 
-    if(size == null){
-        size = 0;
-    }
     let oj = {
         id_pr: id_product.value,
         name: name_product.textContent,
@@ -77,7 +75,7 @@ btn_add_cart.addEventListener('click', function () {
         s_price: start_price.textContent,
         price: init_price.textContent,
         color: color.value,
-        size: size.value,
+        size: size_sp,
         quannity: quantity_value.textContent
     };
 

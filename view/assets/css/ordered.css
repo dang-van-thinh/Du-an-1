@@ -1,0 +1,12 @@
+.wrapper_ordered{
+    width: 60%;
+    height: 100vh;
+    margin: 0 auto;
+}
+.wrapper_ordered>h3{
+    text-align: center;
+    font-size: 32px ;
+}
+.wrapper_ordered h4{
+    font-size: large;
+}

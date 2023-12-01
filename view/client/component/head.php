@@ -10,6 +10,7 @@
 
   <link rel="stylesheet" href="../view/assets/css/product_detail.css" />
   <link rel="stylesheet" href="../view/assets/css/order.css" />
+  <link rel="stylesheet" href="../view/assets/css/ordered.css" />
   
   <title>Sport Da1</title>
 </head>

@@ -1,105 +1,77 @@
 <div class="col-10 float_right">
-                    <h3 class="my-4">Danh sách hóa đơn</h3>
-                    <table class="table table-bordered table-hover align-middle">
-                        <thead class="table-dark">
-                            <tr>
-                                <th style="width: 40px;"><input type="checkbox" class="item_checkbox" id="checkAll">
-                                </th>
-                                <th style="width: 40px;">STT</th>
-                                <th>Tên khách hàng</th>
-                                <th></th>
-                                <th>Giá</th>
-                                <th style="width: 40px;">Số lượng</th>
-                                <th>
-                                    <a href="#" class="btn btn-success hover_item">Thêm mới</a>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="checkbox" name="check_sp" class="item_checkbox"></td>
-                                <td>1</td>
-                                <td>Quần thể thao nam</td>
-                                <td>
-                                    <img src="../view/assets/img/sp1.webp" alt="" class="img_table">
-                                </td>
-                                <td>344555</td>
-                                <td>24</td>
-                                <td>
-                                    <a href="#" class="btn btn-danger hover_item">Xóa</a>
-                                    <a href="#" class="btn btn-warning hover_item">Sửa</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" name="check_sp" class="item_checkbox"></td>
-                                <td>1</td>
-                                <td>Quần thể thao nam</td>
-                                <td>
-                                    <img src="../view/assets/img/sp1.webp" alt="" class="img_table">
-                                </td>
-                                <td>344555</td>
-                                <td>24</td>
-                                <td>
-                                    <a href="#" class="btn btn-danger">Xóa</a>
-                                    <a href="#" class="btn btn-warning">Sửa</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>1</td>
-                                <td>Quần thể thao nam</td>
-                                <td>
-                                    <img src="../view/assets/img/sp1.webp" alt="" class="img_table">
-                                </td>
-                                <td>344555</td>
-                                <td>24</td>
-                                <td>
-                                    <a href="#" class="btn btn-danger">Xóa</a>
-                                    <a href="#" class="btn btn-warning">Sửa</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>1</td>
-                                <td>Quần thể thao nam</td>
-                                <td>
-                                    <img src="../view/assets/img/sp1.webp" alt="" class="img_table">
-                                </td>
-                                <td>344555</td>
-                                <td>24</td>
-                                <td>
-                                    <a href="#" class="btn btn-danger">Xóa</a>
-                                    <a href="#" class="btn btn-warning">Sửa</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <!-- panigation -->
-                    <div>
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- group input -->
-                    <div class="my-5">
-                        <div class="btn-group">
-                            <a href="#" class="btn btn-warning" id="selectAll">Chọn tất cả</a>
-                            <a href="#" class="btn btn-success" id="unSelectAll">Bỏ chọn tất cả</a>
-                            <a href="#" class="btn btn-danger" id="delSelect">Xóa theo các lựa chọn</a>
-                        </div>
-                    </div>
+    <h3 class="my-4">Danh sách hóa đơn</h3>
+    <table class="table table-bordered table-hover align-middle">
+        <thead class="table-dark" align="center">
+            <tr>
+                <th style="width: 40px;"><input type="checkbox" class="item_checkbox" id="checkAll">
+                </th>
+                <th style="width: 40px;">Mã hóa đơn</th>
+                <th>Tên khách hàng</th>
+                <th style="width:40px;">Số lượng đơn hàng</th>
+                <th style="width:200px;">Ngày mua</th>
+                <th style="width: 200px;">Trạng thái</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($hd as $key => $item) :
+                extract($item);
+            ?>
+            <form action="?ad=infor_hd" method="post">
+                <tr>
+                    <td><input type="checkbox" name="check_sp" class="item_checkbox"></td>
+                    <td><?= $id_hd ?></td>
+                    <input type="hidden" name="id_hd" value="<?= $id_hd ?>">
+                    <td><?= load_one_tk($id_user)['user_name'] ?></td>
+                    <td>
+                        <span><?= $tong_dh ?></span>
+                    </td>
+                    <td>
+                        <span><?= $ngay_mua ?></span>
+                    </td>
+                    <td>
+                        <select name="trang_thai" id="">
+                        <option <?= $trang_thai == 0? 'selected':'' ?> value="0">Hủy đơn hàng</option>
+                        <option <?= $trang_thai == 1? 'selected':'' ?> value="1">Đang chờ duyệt</option>
+                        <option <?= $trang_thai == 2? 'selected':'' ?> value="2">Đã duyệt - Đang giao</option>
+                        <option disabled <?= $trang_thai == 3? 'selected':'' ?> value="3">Đã giao</option>
+                        </select>
+                    </td>
+                    <td style="width: 250px">
+                        <a href="?ad=infor_hd&id_hd=<?= $id_hd ?>" class="btn btn-outline-warning">Thông tin</a>
+                        <input type="submit" name="update_hd" value="Cập nhật" class="btn btn-outline-success">
+                    </td>
+                </tr>
+            </form>
+            <?php endforeach ?>
+        </tbody>
+    </table>
+    <!-- panigation -->
+    <div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <?php for ($i=1; $i <= $page; $i++):?>
+                    <li class="page-item"><a class="page-link" href="?ad=thong_ke&curent_page=<?=$i?>"><?=$i?></a></li>
+                <?php endfor ?>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!-- group input -->
+    <div class="my-5">
+        <div class="btn-group">
+            <a href="#" class="btn btn-warning" id="selectAll">Chọn tất cả</a>
+            <a href="#" class="btn btn-success" id="unSelectAll">Bỏ chọn tất cả</a>
+            <a href="#" class="btn btn-danger" id="delSelect">Xóa theo các lựa chọn</a>
+        </div>
+    </div>
 </div>

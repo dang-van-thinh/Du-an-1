@@ -59,7 +59,7 @@ if(isset($_GET['lg'])){
                 if( $error != ''){
                     setcookie('alert_f',$error,time()+3,'/');
                     header("Location: ?lg=sigin");
-                    exit;
+                    
                 }else{
                     setcookie('toasct_s','Bạn đã đăng ký thành công tài khoản . Giờ hãy tiến hành đăng nhập nhé !',time()+3,'/');
                     header('location: ?lg=login');

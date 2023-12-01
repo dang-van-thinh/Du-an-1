@@ -19,6 +19,9 @@ if (isset($_SESSION['id_user']) && $_SESSION['role'] != 0) {
         switch ($_GET['ad']) {
                 //quản lý sản phẩm
             case 'home':
+                $tt_0 = load_tt_hd(1);
+                $tt_3 = load_tt_hd(2);
+                $user = count_item('user');
                 include '../view/admin/thong-ke/home.php';
                 break;
             case 'add_sp':
@@ -375,8 +378,37 @@ if (isset($_SESSION['id_user']) && $_SESSION['role'] != 0) {
                 include '../view/admin/';
             break;
             case 'thong_ke':
+                $pani = 1;
+                if (isset($_GET['curent_page'])) {
+                    $pani = $_GET['curent_page'];
+                }
+                $item_page = 10;
+                $curent = $pani - 1;
+                $curent = $curent * $item_page;
+                $table = 'user';
+                $total_item = count_item($table); // đếm có bao nhiêu danh mục để chia page
+                $page = ceil($total_item / $item_page); // làm tròn số lên 
+                //load hd
+                $hd = load_all_hd();
+                // var_dump($hd);
+                
                 include '../view/admin/thong-ke/hoa_don.php';
             break;
+            case 'infor_hd':
+                if(isset($_GET['id_hd'])){
+                    $hd = load_one_hd($_GET['id_hd']);
+                    extract($hd);
+                    $sp = load_ct_hd($id_hd);
+                    include '../view/admin/thong-ke/infor_hd.php';
+                }
+                if(isset($_POST['update_hd']) && $_POST['update_hd']){
+                    $id_hd = $_POST['id_hd'];
+                    $tt = $_POST['trang_thai'];
+                    update_tt_dh($id_hd,$tt);
+                    setcookie('toasct_s','Cập nhật thành công !',time()+3,'/');
+                    header('location: ?ad=thong_ke');
+                }
+                break;
             case 'bieu_do':
                 include '../view/admin/thong-ke/bieu_do.php';
             break;
@@ -388,10 +420,16 @@ if (isset($_SESSION['id_user']) && $_SESSION['role'] != 0) {
                 header('location: index.php');
                 break;
             default:
-                include '../view/admin/san-pham/list_sp.php';
+            $tt_0 = load_tt_hd(1);
+                $tt_3 = load_tt_hd(2);
+                $user = count_item('user');
+                include '../view/admin/thong-ke/home.php';
                 break;
         }
     } else {
+        $tt_0 = load_tt_hd(1);
+                $tt_3 = load_tt_hd(2);
+                $user = count_item('user');
         include '../view/admin/thong-ke/home.php';
     }
 
