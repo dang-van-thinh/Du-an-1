@@ -46,7 +46,8 @@
                         <input type="text" name="address_order" id="address_order" placeholder="Nhập vào địa chỉ người nhận..." value="<?= isset($address) ? $address : '' ?>"><br><br>
                         <label for="">Email người nhận</label><br>
                         <input type="email" name="email_order" id="email_order" placeholder="Nhập vào email người nhận..." value="<?= isset($email) ? $email : '' ?>"><br><br>
-
+                        <label for="ghi_chu">Ghi chú: </label>
+                        <textarea name="ghi_chu" id="ghi_chu" cols="40" rows="5" placeholder="Ghi chú cho chủ shop"></textarea>
                     </div>
                 </div>
                 <div class="cart-content2">

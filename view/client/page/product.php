@@ -36,33 +36,36 @@
         </div>
     </div>
     <div class="product-list-content">
+        <form action="?act=loc" method="post">
     <div class="filter-container">
-        <h4>Size </h4>
-        <input type="radio" id="size-s" name="method_size" value="S">
+    
+        <!-- <h4>Size </h4>
+        <input type="radio" id="size-s" name="method_size" value="s">
         <label for="size-s">S</label>
-        <input type="radio" id="size-m" name="method_size" value="M">
+        <input type="radio" id="size-m" name="method_size" value="m">
         <label for="size-m">M</label>
-        <input type="radio" id="size-l" name="method_size" value="L">
+        <input type="radio" id="size-l" name="method_size" value="l">
         <label for="size-l">L</label>
         <h4>Màu sắc</h4>
-        <input type="radio" id="color-blue" name="name_color[]r" value="blue" />
+        <input type="radio" id="color-blue" name="name_color" value="blue" />
         <label class="color-label" for="color-blue">Blue</label>
-        <input type="radio" id="color-red" name="name_color[]r" value="red" />
+        <input type="radio" id="color-red" name="name_color" value="red" />
         <label class="color-label" for="color-red">Đỏ</label>
-        <input type="radio" id="color-black" name="name_color[]r" value="black" />
+        <input type="radio" id="color-black" name="name_color" value="black" />
         <label class="color-label" for="color-black">Đen </label>
-        <input type="radio" id="color-while" name="name_color[]r" value="while" />
-        <label class="color-label" for="color-while">Trắng</label>
+        <input type="radio" id="color-while" name="name_color" value="while" />
+        <label class="color-label" for="color-while">Trắng</label> -->
         <h4 class="mt">Giá</h4>
-            <input type="range" id="price" name="price" min="0" max="1000000" step="10000" oninput="priceOutput.value = price.value">
+            <input type="range" id="price" name="price" min="0" max="10000000" step="10000" oninput="priceOutput.value = price.value">
             <div class="min-max-price">
                 <span class="min-value">0 VNĐ</span>
                 <span class="max-value">
-                    <output name="priceOutput" id="priceOutput">1.000.000</output> VNĐ<br /><br />
+                    <output name="priceOutput" id="priceOutput">10.000.000</output> VNĐ<br /><br />
                 </span>
             </div>
-            <input class="filter-btn mt" type="submit" value="LỌC" />
+            <input class="filter-btn mt" type="submit" name="loc" value="LỌC" />
     </div>
+    </form>
     <div class="product-list-wapper">
         <h1 class="product-list-title">Danh sách sản phẩm</h1>
         <div class="pagination-container">

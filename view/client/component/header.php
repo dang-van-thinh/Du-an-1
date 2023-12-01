@@ -35,9 +35,9 @@
     </nav>
     <!-- Search, Cart, Login -->
     <div class="nav-right">
-      <form action="" method="post">
-        <input class="search-input" type="text" placeholder="Nhập tên sản phẩm" />
-        <button class="search-button" type="submit">
+      <form action="?act=product" method="post">
+        <input class="search-input" type="text" required placeholder="Nhập tên sản phẩm" name="search_product"/>
+        <button class="search-button" name="search" type="submit">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
       </form>
@@ -53,8 +53,8 @@
             <span><?= load_one_tk($_SESSION['id_user'])['user_name'] ?></span>
           </div>
           <div class="account-option">
-          <a href="?act=infor_order">Thông tin đơn hàng</a>
-            <a href="?act=infor_user">Chỉnh sửa tài khoản</a>
+          <a href="?act=infor_order&id_user=<?= $_SESSION['id_user']?>">Thông tin đơn hàng</a>
+            <a href="?act=infor_user&id_user=<?= $_SESSION['id_user']?>">Chỉnh sửa tài khoản</a>
             <a href="?act=logout" onclick="return confirm('Bạn có chắc muốn đăng xuất không ?')">Đăng xuất</a>
           </div>
         </div>

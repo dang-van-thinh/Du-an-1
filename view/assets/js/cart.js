@@ -1,7 +1,20 @@
 var cart_number = document.getElementById('cart_number');
+// nếu như giỏ hàng ko có sản phẩm thì cho hiển thị nút quay lại trang chính
 if (cart_number.textContent == 0) {
     let btn_dat_hang = document.querySelector('input[name=dat_hang]');
     btn_dat_hang.style.display = 'none';
+    let un_dat_hang = document.getElementById('un_dat_hang');
+   let divUnOrder =  document.createElement('div');
+
+   
+   let aUnOrder = document.createElement('a');
+   aUnOrder.textContent = 'Tiếp tục mua hàng';
+   aUnOrder.href = '?act=home';
+   aUnOrder.classList.add('submit-btn');
+
+
+   divUnOrder.appendChild(aUnOrder);
+   un_dat_hang.appendChild(divUnOrder);
 }
 function renderCart() {
     var storage = JSON.parse(localStorage.getItem('toCart'));

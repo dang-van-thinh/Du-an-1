@@ -28,8 +28,11 @@ function add_order_ct($id_sp,$id_hd,$price,$quanity,$color,$size){
 }
 
 //thêm mới vào bảng hoa_don
-function add_hoa_don($id_user,$date,$pay){
-    $sql = "INSERT INTO hoa_don (id_user,ngay_mua,pay) values('$id_user','$date','$pay')";
+function add_hoa_don($id_user,$date,$pay,$name_order,$number_phone_order,
+$address_order,$email_order,$ghi_chu){
+    $sql = "INSERT INTO hoa_don (id_user,ngay_mua,pay,ten_kh,sdt,dia_chi,email,ghi_chu) 
+    values('$id_user','$date','$pay','$name_order','$number_phone_order','$address_order',
+    '$email_order','$ghi_chu')";
     pdo_excute($sql);
     return true;
 }

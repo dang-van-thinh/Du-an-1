@@ -66,3 +66,25 @@
     justify-content: center;
    display: none;
 }
+.btn_danger{
+    padding: 0.5rem;
+    border: 1px solid red;
+    font-size: small;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.btn_danger:hover{
+    background-color: rgb(189, 27, 27)(178, 54, 54);
+}
+.btn_success{
+    padding: 0.5rem;
+    border: 1px solid green;
+    font-size: small;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.btn_success:hover{
+    background-color: rgb(27, 189, 49)(178, 54, 54);
+}

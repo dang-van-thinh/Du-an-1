@@ -1,4 +1,12 @@
 <body>
+    <!-- toasct -->
+    <?php if (isset($_COOKIE['toasct_s']) || isset($_COOKIE['toasct_f'])) : ?>
+            <div id="toasct">
+                <p class="toasct_custom  <?= isset($_COOKIE['toasct_s']) ? 'bg-success' : 'bg-danger' ?>">
+                    <?= isset($_COOKIE['toasct_s']) ? $_COOKIE['toasct_s'] : $_COOKIE['toasct_f'] ?>
+                </p>
+            </div>
+        <?php endif ?>
     <div class="wrapper">
         <form action="?lg=login" method="post" onsubmit="return check_login()">
             <div class="card item_center" style="width: 30rem;">
@@ -43,13 +51,6 @@
 
         </form>
     </div>
-    <!-- toasct -->
-    <?php if (isset($_COOKIE['toasct_s']) || isset($_COOKIE['toasct_f'])) : ?>
-            <div id="toasct">
-                <p class="toasct_custom  <?= isset($_COOKIE['toasct_s']) ? 'bg-success' : 'bg-danger' ?>">
-                    <?= isset($_COOKIE['toasct_s']) ? $_COOKIE['toasct_s'] : $_COOKIE['toasct_f'] ?>
-                </p>
-            </div>
-        <?php endif ?>
+    
 
 </body>

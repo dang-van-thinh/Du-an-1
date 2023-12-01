@@ -61,8 +61,16 @@ if(isset($_GET['lg'])){
                     header("Location: ?lg=sigin");
                     
                 }else{
-                    setcookie('toasct_s','Bạn đã đăng ký thành công tài khoản . Giờ hãy tiến hành đăng nhập nhé !',time()+3,'/');
-                    header('location: ?lg=login');
+                    if(check_sigin($email_sigin) == ''){ 
+                        $img = "../upload/user/mac-dinh-user.jpg";
+                        insert_user($user_sigin,$email_sigin,$pw_sigin,0,'',$phone_sigin,$img);
+                        setcookie('toasct_s','Bạn đã đăng ký thành công tài khoản . Giờ hãy tiến hành đăng nhập nhé !',time()+3,'/');
+                        header('location: ?lg=login');
+                    }else{
+                        setcookie('toasct_f','Email đã tồn tại !',time()+3,'/');
+                        header('location: ?lg=sigin');
+                    }
+                   
                 }
 
             }

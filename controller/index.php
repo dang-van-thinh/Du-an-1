@@ -40,9 +40,44 @@ if (isset($_GET['act'])) {
             if (isset($_GET['id_dm'])) {
                 $id_dm = $_GET['id_dm'];
                 $sp = load_sp_dm($id_dm);
+                include '../view/client/page/product.php';
+            }
+            if (isset($_POST['search'])) {
+                $search = $_POST['search_product'];
+                $sp = load_search($search);
+                include '../view/client/page/product.php';
             }
 
-            include '../view/client/page/product.php';
+            
+            break;
+        case 'loc':
+            if(isset($_POST['loc'])){
+                
+                // if(isset($_POST['method_size'])){
+                //     $size = $_POST['method_size'];
+                //     var_dump($size);
+                // }else{
+                //     $size = null;
+                // }
+                // if(isset($_POST['name_color'])){
+                //     $color = $_POST['name_color'];
+                //     var_dump($color);
+                // }else{
+                //     $color = null;
+                // }
+                if(isset($_POST['price'])){
+                    $price = $_POST['price'];
+                }else{
+                    $price = null;
+                }
+               
+               
+                
+               
+                $sp = filter_sp($price);
+                include '../view/client/page/product.php';
+            }
+            
             break;
         case 'gioithieu':
             include '../view/client/page/gioithieu.php';
@@ -62,6 +97,7 @@ if (isset($_GET['act'])) {
                 $address_order = $_POST['address_order'];
                 $email_order = $_POST['email_order'];
                 $pay = $_POST['pay'];
+                $ghi_chu = $_POST['ghi_chu'];
                 // tatast cả được lấy theo mảng
                 $id_sp = $_POST['id_sp'];
                 $price = $_POST['gia'];
@@ -80,7 +116,8 @@ if (isset($_GET['act'])) {
                     date_default_timezone_set('Asia/Ho_Chi_Minh');
                     $date = date('Y-m-d H:i:s');
                     // echo $date;
-                    if (add_hoa_don($id_user, $date,$pay) == true) {
+                    if (add_hoa_don($id_user, $date,$pay,$name_order,$number_phone_order,
+                    $address_order,$email_order,$ghi_chu) == true) {
                         $id_hd = load_id_hd($id_user);
                         // check độ dài giá trị bằng  nhau xong sẽ adđ vào đơn hàng
 
@@ -112,10 +149,24 @@ if (isset($_GET['act'])) {
         //         include '../view/client/page/ordered.php';
         //     break;
         case 'infor_user':
-            include '../view/client/page/lienhe.php';
+            if(isset($_GET['id_user'])){
+                $tk = load_one_tk($_GET['id_user']);
+                extract($tk);
+                include '../view/client/page/ct_tk.php';
+            }
+            
             break;
         case 'infor_order':
-            include '../view/client/page/lienhe.php';
+            if(isset($_GET['id_user'])){
+                $id_user = $_GET['id_user'];
+                $sp = load_hd_user($id_user);
+                // var_dump($sp);
+                include '../view/client/page/user_dh.php';
+            }
+           
+            break;
+        case 'update_order':
+            
             break;
         case 'lienhe':
             include '../view/client/page/lienhe.php';
