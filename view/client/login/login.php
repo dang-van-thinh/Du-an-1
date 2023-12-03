@@ -52,5 +52,33 @@
         </form>
     </div>
     
+<script>
+    
+    function check_login(){
+        let check = true;
+        let email = document.getElementById('email');
+        let pw = document.getElementById('password');
+        if(email.value == ''){ 
+            email.style.border = '2px solid red';
+            email.focus()
+            check = false;
+            
+            email.setAttribute('placeholder','Không được để trống Email')
+        }else{
+            email.style.border = 'none';
+            check= true;
+        }
 
-</body>
+        //password
+        if(pw.value == ''){ 
+            pw.style.border = '2px solid red';
+            pw.focus();
+            check = false;
+            pw.setAttribute('placeholder','Không được để trống Password')
+        }else{
+            pw.style.border = 'none';
+            check= true;
+        }
+    return check;
+    }
+</script>

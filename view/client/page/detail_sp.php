@@ -52,7 +52,7 @@
 
           <span class="price_detail " id="init_price"><?= $gia_km ?> </span><span class="price_unit">VND</span>
 
-          <del class="" id="start_price"><?= $gia_sp?></del> <span>VND</span>
+          <del class="" id="start_price"><?= $gia_sp ?></del> <span>VND</span>
 
         </div>
 
@@ -112,19 +112,19 @@
             <?php
             $size = $method_size;
             $size = explode(' ', $size);
-            if(count($size)>0):
-            // var_dump($size);
-            foreach ($size as $key => $item) :
-              if ($item != '') :
+            if (count($size) > 0) :
+              // var_dump($size);
+              foreach ($size as $key => $item) :
+                if ($item != '') :
             ?>
-                <span>
-                  <input id="size_<?= $key + 1 ?>" name="size" type="radio" value="<?= $item ?>" />
-                  <label for="size_<?= $key + 1 ?>" class="radio-label">
-                    <span><?= $item ?></span>
-                  </label>
-                </span>
-              <?php endif ?>
-            <?php endforeach ?>
+                  <span>
+                    <input id="size_<?= $key + 1 ?>" name="size" type="radio" value="<?= $item ?>" />
+                    <label for="size_<?= $key + 1 ?>" class="radio-label">
+                      <span><?= $item ?></span>
+                    </label>
+                  </span>
+                <?php endif ?>
+              <?php endforeach ?>
             <?php endif ?>
 
           </div>
@@ -178,19 +178,28 @@
     <h3 class="">Comment:</h3>
     <div class="content_commneted">
       <!-- danh sách đã comment -->
-      <div class="group_commented">
-        <div class="info_commented">
-          <div class="img_commented">
-            <img src="../view/assets/img/fblogo.png" alt="" class="">
+      <?php if (count($comment) != 0) : ?>
+        <?php foreach ($comment as $key => $cm) : 
+          extract($cm);
+          ?>
+          <div class="group_commented">
+            <div class="info_commented">
+              <div class="img_commented">
+                <img src="<?= $img?>" alt="" class="">
+              </div>
+              <div class="user_commented">
+                <p><?= $user_name?></p>
+              </div>
+            </div>
+            <div class="alert_warning">
+              <p><?= $noi_dung?></p>
+            </div>
           </div>
-          <div class="user_commented">
-            <p>Nguyễn Văn A</p>
-          </div>
-        </div>
-        <div class="text_commented">
-          <p>Sản phẩm oke , không có gì phải chê</p>
-        </div>
-      </div>
+
+        <?php endforeach ?>
+      <?php else : ?>
+        <p class="text_commented">Hãy là người đầu tiên bình luận</p>
+      <?php endif ?>
 
       <?php
       if (isset($_SESSION['id_user'])) :
@@ -198,7 +207,9 @@
         extract($user);
       ?>
         <!-- người mới comment -->
-        <form action="" method="post">
+        <form action="?act=detail_sp" method="post">
+          <input type="hidden" name="id_sp" value="<?= $id_sp?>">
+          
           <div class="group_commented p_top">
             <!-- thong tin nguoi dung comment -->
             <div class="info_commented">
@@ -211,10 +222,10 @@
             </div>
             <!-- noi dung comment -->
             <div class="text_commented">
-              <textarea name="" id="" cols="90" rows="5" placeholder="Bình luận ."></textarea>
+              <textarea name="noi_dung" required id="" cols="90" rows="5" placeholder="Bình luận ."></textarea>
             </div>
             <div>
-              <input type="submit" value="Đăng" class="btn_submit">
+              <input type="submit" name="comment" value="Đăng" class="btn_submit">
             </div>
           </div>
         </form>

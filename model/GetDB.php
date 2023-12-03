@@ -152,4 +152,13 @@ function load_hd_user($id_user){
     return pdo_query($sql);
 }
 
+//load comment
+function load_comment_sp($id_sp){ 
+    $sql = "SELECT cm.*,user.* FROM comment cm JOIN user 
+    ON cm.id_user = user.id_user
+    WHERE cm.id_sp = '$id_sp'
+     order by cm.ngay_cm DESC";
+    return pdo_query($sql);
+}
+
 ?>

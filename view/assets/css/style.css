@@ -88,3 +88,62 @@
 .btn_success:hover{
     background-color: rgb(27, 189, 49)(178, 54, 54);
 }
+
+.main_toasct{
+    position: absolute;
+    right: 0.75rem;
+    top: 0;
+}
+.toasct_custom{
+    padding: 5px 10px ;
+    color: #ffff;
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px gray;
+}
+#toasct{
+    margin: 10px 0;
+    position: absolute;
+    right: 0.75rem;
+    top: 5rem;
+    transition: 0.5s;
+    cursor: default;
+    position: relative;
+    z-index: 999;
+}
+.bg_fail{
+    background-color: rgb(179, 60, 60);
+    padding: 1rem;
+}
+.bg_success{
+    background-color: rgb(11, 176, 11);
+    padding: 1rem;
+}
+.toasct_active{
+    /* transform: translateX(150%); */
+    animation: toasct_active ease-in-out 2s  forwards;
+}
+.product-list-content {
+    margin: 150px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 24% 74%;
+}
+@keyframes toasct_active {
+    0%{
+        right: 0.75rem;
+    }
+    100%{
+        right: -100%;
+        display: none;
+    }
+}
+
+.alert_warning{
+    padding: 0.5rem;
+    background-color: #a8a7aa;
+    width: fit-content;
+    color: aliceblue;
+    box-shadow: 0 5px 5px gray;
+    border-radius: 5px;
+}
