@@ -22,16 +22,16 @@
             <h4>Thông tin đặt hàng</h4>
             <div>
                 <p>
-                    Người dùng: <span><?= $user_name ?></span>
+                    Người dùng: <span><?= $ten_kh ?></span>
                 </p>
                 <p>
-                    Địa chỉ: <span><?= $address ?></span>
+                    Địa chỉ: <span><?= $dia_chi ?></span>
                 </p>
                 <p>
                     Email: <span><?= $email ?></span>
                 </p>
                 <p>
-                    Số điện thoại: <span><?= $number_phone ?></span>
+                    Số điện thoại: <span><?= $sdt ?></span>
                 </p>
             </div>
         </div>
@@ -74,7 +74,12 @@
                                 <td>
                                     <?= $sl_mua * $gia ?>
                                 </td>
-                                <td><?= $trang_thai ?></td>
+                                <td>
+                                    <?= $trang_thai ==0 ?'Đã hủy':'' ?>
+                                    <?= $trang_thai ==1 ?'Đang chờ duyệt':'' ?>
+                                    <?= $trang_thai ==2 ?'Đã duyệt - Đang giao':'' ?>
+                                    <?= $trang_thai ==3 ?'Đã giao':'' ?>
+                                </td>
                             </tr>
                            
                         <?php endforeach ?>

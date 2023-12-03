@@ -37,5 +37,10 @@ $address_order,$email_order,$ghi_chu){
     return true;
 }
 
-
+// thêm bình luận
+function add_comment($id_sp,$id_user,$noi_dung,$ngay_cm){
+    $sql="INSERT INTO comment (id_sp,id_user,noi_dung,ngay_cm) 
+    VALUES ('$id_sp','$id_user','$noi_dung','$ngay_cm')";
+    pdo_excute($sql);
+}
 ?>

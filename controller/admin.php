@@ -374,8 +374,8 @@ if (isset($_SESSION['id_user']) && $_SESSION['role'] != 0) {
                 $dm_type = load_dm_type();
                 include '../view/admin/danh-muc/add_dm.php';
                 break;
-            case 'binh_luan':
-                include '../view/admin/';
+            case 'comment':
+                include '../view/admin/binh-luan/comment.php';
             break;
             case 'thong_ke':
                 $pani = 1;

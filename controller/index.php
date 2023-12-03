@@ -32,6 +32,19 @@ if (isset($_GET['act'])) {
                 $one_sp = load_one_sp($_GET['id_sp']);
                 extract($one_sp);
                 $sp = load_all_sp(0, 0, 5);
+                $comment = load_comment_sp($_GET['id_sp']);
+                
+            }
+            if(isset($_POST['comment']) && $_POST['comment'] ){ 
+                $noi_dung = $_POST['noi_dung'];
+                $id_sp = $_POST['id_sp'];
+                $id_user = $_SESSION['id_user'];
+                // Định dạng và hiển thị thời gian trong một vùng thời gian cụ thể
+                date_default_timezone_set('Asia/Ho_Chi_Minh');
+                $ngay_cm = date('Y-m-d H:i:s');
+
+                add_comment($id_sp,$id_user,$noi_dung,$ngay_cm);
+                header("location: ?act=detail_sp&id_sp=$id_sp");
             }
 
             include '../view/client/page/detail_sp.php';
@@ -127,6 +140,8 @@ if (isset($_GET['act'])) {
                             }
                             update_tong_sp_hd(count($id_sp),$id_hd);
                         }
+                        // Gửi thông báo về trình duyệt
+                        echo "<script>window.localStorage.removeItem('toCart')</script>";
                         setcookie('toasct_s','Mua hàng thành công !',time()+3,'/');
                         $hd = load_one_hd();
                         extract($hd);
@@ -165,9 +180,7 @@ if (isset($_GET['act'])) {
             }
            
             break;
-        case 'update_order':
-            
-            break;
+        
         case 'lienhe':
             include '../view/client/page/lienhe.php';
             break;

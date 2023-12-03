@@ -1,4 +1,14 @@
 <body>
+    <!-- toasct -->
+  <?php if (isset($_COOKIE['toasct_s']) || isset($_COOKIE['toasct_f'])) : ?>
+    <div class="main_toasct">
+      <div id="toasct">
+        <p class="toasct_custom  <?= isset($_COOKIE['toasct_s']) ? 'bg_success' : 'bg_fail' ?>">
+          <?= isset($_COOKIE['toasct_s']) ? $_COOKIE['toasct_s'] : $_COOKIE['toasct_f'] ?>
+        </p>
+      </div>
+    </div>
+  <?php endif ?>
     <div class="wrapper">
         <form action="?lg=sigin" method="post" onsubmit="return check_sigin()">
             <div class="card item_center" style="width: 30rem;">
@@ -62,3 +72,81 @@
     </div>
 
 </body>
+
+<script>
+    
+  var rpw = document.getElementById('rpw');
+  rpw.addEventListener('input',function(){
+    let pw = document.getElementById('pw').value;
+    if(rpw.value != pw){
+        rpw.style.border = '2px solid red';
+    }else{
+        rpw.style.border = 'none'
+    }
+  });
+    function check_sigin() {
+    let check = true;
+    let email = document.getElementById('email');
+    let name_user = document.getElementById('name_user');
+    let pw = document.getElementById('pw');
+    let rpw = document.getElementById('rpw');
+    let number_phone = document.getElementById('number_phone');
+    // check email
+    if(email.value == ''){
+        email.style.border = '2px solid red';
+        email.focus();
+        check = false;
+        email.setAttribute('placeholder','Không được để trống Email');
+    }else{
+        email.style.border = 'none';
+        check = true;
+    } 
+// check name_user
+    if(name_user.value == ''){
+        name_user.style.border = '2px solid red';
+        name_user.focus()
+        name_user.setAttribute('placeholder','Không được để trống Tên người dùng');
+        check = false;
+    }else{
+        name_user.style.border = 'none';
+        check = true;
+    } 
+    // check password
+    if(pw.value == ''){
+        pw.style.border = '2px solid red';
+        pw.focus()
+        pw.setAttribute('placeholder','Không được để trống Password');
+        check = false;
+    }else{
+        pw.style.border = 'none';
+        check = true;
+    }
+    if(rpw.value == ''){
+        rpw.style.border = '2px solid red';
+        rpw.focus()
+        rpw.setAttribute('placeholder','Không được để trống Enter password');
+        check = false;
+    }else{
+        rpw.style.border = 'none';
+        check = true;
+    }
+// check number_phone
+    let value_number_phone = number_phone.value;
+    if(value_number_phone != ''){
+        if(value_number_phone.length < 10 ||value_number_phone.length >10){
+            number_phone.style.border = '2px solid red';
+            alert('Số điện thoại không đúng !');
+            check = false;
+        }else{
+            number_phone.style.border = 'none';
+            check = true
+        }
+    }else{
+        number_phone.style.border = '2px solid red';
+        number_phone.focus()
+        number_phone.setAttribute('placeholder','Không được để trống Số điện thoại');
+        check = false;
+    }
+return check;
+    }
+</script>

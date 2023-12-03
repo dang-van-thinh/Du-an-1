@@ -3,7 +3,7 @@
         <div class="my-3">
             <h3>Thêm mới danh mục</h3>
         </div>
-        <form action="?ad=add_dm" method="post">
+        <form action="?ad=add_dm" method="post" onsubmit="return validate_dm()">
             <div class="row">
                 <div class="col-lg-4">
                     <div class="mt-3">
@@ -38,3 +38,13 @@
         </form>
     </div>
 </div>
+<script>
+    function validate_dm() { 
+        let name_dm = document.getElementById('name_dm');
+        if(name_dm.value == ''){
+            name_dm.style.border = '2px solid red';
+return false
+        }
+
+     }
+</script>

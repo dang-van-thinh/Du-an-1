@@ -15,7 +15,7 @@
                                 <a class="nav-link text_custom fw-bold" href="?ad=list_tk">Quản lý tài khoản</a>
                             </li>
                             <li class="nav-item mb-3">
-                                <a class="nav-link text_custom fw-bold" href="#">Quản lý bình luận</a>
+                                <a class="nav-link text_custom fw-bold" href="?ad=comment">Quản lý bình luận</a>
                             </li>
                             <li class="nav-item mb-3">
                                 <a class="nav-link text_custom fw-bold" href="?ad=thong_ke">Thống kê hóa đơn</a>
