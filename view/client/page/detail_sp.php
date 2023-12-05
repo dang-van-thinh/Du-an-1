@@ -65,15 +65,15 @@
           <ul class="detail_function">
             <li class="font-semibold">
               <i class="fa-solid fa-user-shield" style="color: #eb0017"></i>
-              1 Year AL Jazeera Brand Warranty
+              1 Năm Bảo Hành Cho Tất Cả Các Sản Phẩm
             </li>
             <li class="font-semibold">
               <i class="fa-brands fa-instalod" style="color: #eb0017"></i>
-              30 Day Return Policy
+              Hoàn Trả Trong 30 Ngày
             </li>
             <li class="font-semibold">
               <i class="fa-solid fa-sack-dollar" style="color: #eb0017"></i>
-              Cash on Delivery available
+              Hoàn Lại Tiền Nếu Không Đổi Được Hàng
             </li>
           </ul>
         </div>
@@ -191,14 +191,14 @@
                 <p><?= $user_name?></p>
               </div>
             </div>
-            <div class="alert_warning">
+            <div class="">
               <p><?= $noi_dung?></p>
             </div>
           </div>
 
         <?php endforeach ?>
       <?php else : ?>
-        <p class="text_commented">Hãy là người đầu tiên bình luận</p>
+        <p class="text_commented alert_warning">Hãy là người đầu tiên bình luận</p>
       <?php endif ?>
 
       <?php

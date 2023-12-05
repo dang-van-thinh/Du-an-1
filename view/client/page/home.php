@@ -105,7 +105,7 @@
 
     <!-- Products list -->
     <div class="products-list">
-        <h1 class="products-list-title">Danh sách sản phẩm</h1>
+        <h1 class="products-list-title">Sản phẩm có nhiều lượt xem nhất</h1>
 
         <div class="product">
             <?php foreach ($sp as $key => $item) :

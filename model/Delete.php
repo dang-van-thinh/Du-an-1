@@ -17,4 +17,9 @@ function  del_sp($id_sp){
     $sql = "DELETE FROM san_pham WHERE id_sp=$id_sp";
     pdo_excute($sql);
 }
+// hàm xóa binh luận
+function del_cm($id_cm){
+    $sql = "DELETE FROM comment WHERE id_cm=$id_cm";
+    pdo_excute($sql);
+}
 ?>

@@ -20,17 +20,18 @@
                             <li class="nav-item mb-3">
                                 <a class="nav-link text_custom fw-bold" href="?ad=thong_ke">Thống kê hóa đơn</a>
                             </li>
+<!--                             
                             <li class="nav-item mb-3">
                                 <a class="nav-link text_custom fw-bold" href="?ad=bieu_do">Biểu đồ thống kê</a>
                             </li>
                             <?php 
                             if($_SESSION['role']==2):
                             ?>
-                            <li class="nav-item mb-3">
+                            <li  class="nav-item mb-3">
                                 <a class="nav-link text_custom fw-bold" href="?ad=doanh_thu" aria-disabled="true">Quản lý doanh
                                     thu</a>
                             </li>
-                            <?php endif ?>
+                            <?php endif ?> -->
                         </ul>
                     </div>
                 </div>

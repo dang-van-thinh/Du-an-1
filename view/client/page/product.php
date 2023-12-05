@@ -36,7 +36,7 @@
         </div>
     </div>
     <div class="product-list-content">
-        <form action="?act=loc" method="post">
+        <form action="?act=product" method="post">
     <div class="filter-container">
     
         <!-- <h4>Size </h4>
@@ -56,18 +56,20 @@
         <input type="radio" id="color-while" name="name_color" value="while" />
         <label class="color-label" for="color-while">Trắng</label> -->
         <h4 class="mt">Giá</h4>
-            <input type="range" id="price" name="price" min="0" max="10000000" step="10000" oninput="priceOutput.value = price.value">
+        <input type="hidden" name="searched" value="<?= isset($search)? $search : ''?>">
+        <input type="hidden" name="id_dm" value="<?= isset($id_dm)? $id_dm : ''?>">
+            <input type="range" id="price" name="price_filter" min="0" max="<?= $max_gia?>" step="10000" oninput="priceOutput.value = price.value">
             <div class="min-max-price">
                 <span class="min-value">0 VNĐ</span>
                 <span class="max-value">
-                    <output name="priceOutput" id="priceOutput">10.000.000</output> VNĐ<br /><br />
+                    <output name="priceOutput" id="priceOutput"><?= $max_gia?></output> VNĐ<br /><br />
                 </span>
             </div>
-            <input class="filter-btn mt" type="submit" name="loc" value="LỌC" />
+            <button class="filter-btn mt" type="submit" name="loc">Lọc</button>
     </div>
     </form>
     <div class="product-list-wapper">
-        <h1 class="product-list-title">Danh sách sản phẩm</h1>
+        <h1 class="product-list-title">Sản phẩm</h1>
         <div class="pagination-container">
             <div class="products list-product-wrapper">
             <?php foreach($sp as $key => $item):

@@ -77,6 +77,24 @@ if(isset($_GET['lg'])){
             include '../view/client/login/signin.php';
         break;
         case 'forgot':
+            if(isset($_POST['forgot'])){
+                require_once '../model/quenmk.php';
+                  $email = $_POST['email'];
+                  if(check_sigin($email) == true){
+                      $kh= check_sigin($email);
+                      if(sendEmail($email,$kh['password'])){
+                          setcookie('toasct_s','Gửi Email thành vui lòng vào email đã đăng ký để xem ',time()+5,'/');
+                      }else{
+                          setcookie('toasct_f','Gửi Email không thành công',time()+5,'/');
+                      }
+                      header('location: ?lg=login');
+                  }else{
+                      setcookie('toasct_f','Email bạn nhập không tồn tại trong hệ thống !',time()+5,'/');
+                      header('location: ?lg=forgot');
+                  }
+              
+                
+              }
             include '../view/client/login/forgot.php';
         break;
         case 'index':

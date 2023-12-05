@@ -50,48 +50,31 @@ if (isset($_GET['act'])) {
             include '../view/client/page/detail_sp.php';
             break;
         case 'product':
+           
             if (isset($_GET['id_dm'])) {
                 $id_dm = $_GET['id_dm'];
                 $sp = load_sp_dm($id_dm);
-                include '../view/client/page/product.php';
+                $max_gia = price_sp_max($id_dm);
+                extract($max_gia);
+                // var_dump($max_gia);
             }
             if (isset($_POST['search'])) {
                 $search = $_POST['search_product'];
                 $sp = load_search($search);
-                include '../view/client/page/product.php';
+                $max_gia = price_sp_max(0, $search);
+                extract($max_gia);
             }
-
-            
-            break;
-        case 'loc':
             if(isset($_POST['loc'])){
-                
-                // if(isset($_POST['method_size'])){
-                //     $size = $_POST['method_size'];
-                //     var_dump($size);
-                // }else{
-                //     $size = null;
-                // }
-                // if(isset($_POST['name_color'])){
-                //     $color = $_POST['name_color'];
-                //     var_dump($color);
-                // }else{
-                //     $color = null;
-                // }
-                if(isset($_POST['price'])){
-                    $price = $_POST['price'];
-                }else{
-                    $price = null;
-                }
-               
-               
-                
-               
-                $sp = filter_sp($price);
-                include '../view/client/page/product.php';
+                $id_dm = $_POST['id_dm'];
+                $search = $_POST['searched'];
+                $price = $_POST['price_filter'];        
+                $sp = filter_sp($price,$search,$id_dm);
+                $max_gia = price_sp_max();
+                extract($max_gia);
             }
-            
+            include '../view/client/page/product.php';
             break;
+        
         case 'gioithieu':
             include '../view/client/page/gioithieu.php';
             break;
@@ -178,9 +161,16 @@ if (isset($_GET['act'])) {
                 // var_dump($sp);
                 include '../view/client/page/user_dh.php';
             }
-           
             break;
-        
+        case 'detail_order':
+                if(isset($_GET['id_hd'])){
+                    $id_hd = $_GET['id_hd'];
+                    $sp = load_ct_hd($id_hd);
+                    $hd= load_one_hd($id_hd);
+                    extract($hd);
+                    include '../view/client/page/detail_order.php';
+                }
+            break;
         case 'lienhe':
             include '../view/client/page/lienhe.php';
             break;

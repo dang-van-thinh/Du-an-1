@@ -32,6 +32,7 @@ function load_dm_children($id_loai){
 }
 function count_item($table){
     $sql = "SELECT count(*) FROM $table ";
+   
     return pdo_query_value($sql);
 }
 function load_one_dm($id_loai){
@@ -58,9 +59,10 @@ function load_one_tk($id_user){
 
 
 // load sản phẩm
+
 function load_all_sp($item_page=0,$curent=0,$tt=0){
     $sql = "SELECT * from san_pham WHERE 1 ";
-    
+    $sql .=" order by id_sp DESC";   
     if($item_page > 0){
         $sql.= " LIMIT $item_page ";
     }
@@ -70,7 +72,6 @@ function load_all_sp($item_page=0,$curent=0,$tt=0){
     if($tt > 0){
         $sql .=" LIMIT $tt";
     }
-    
    
     return pdo_query($sql);
 }
@@ -82,6 +83,22 @@ function load_sp_dm($id_dm){
     $sql = "SELECT * FROM san_pham WHERE id_loai=$id_dm";
     return pdo_query($sql);
 }
+
+// tim san pham co gia tien cao nhat
+function price_sp_max($id_loai = 0,$search=''){
+    $sql = "SELECT MAX(sp.gia_sp) as max_gia FROM san_pham sp JOIN loai dm
+    ON sp.id_loai = dm.id_loai
+    where 1";
+    if($id_loai > 0){
+        $sql .= " AND sp.id_loai ='$id_loai'";
+    }
+    if($search != ''){
+        $sql .= " AND sp.ten_sp like '$search%' 
+        or dm.ten_loai like '$search%' ";
+    }
+
+    return pdo_query_one($sql);
+}
 //tìm kiếm sp haocjw theo loại
 function load_search($search){
     $sql = "SELECT sp.*,loai.* FROM san_pham sp JOIN loai
@@ -90,17 +107,20 @@ function load_search($search){
     return pdo_query($sql);
 }
 //lọc sản phẩm
-function filter_sp($price = null){
-    $sql = "SELECT * FROM san_pham WHERE 1 ";
-    // if($size != null){
-    //     $sql .= " AND method_size='$size' ";
-    // }
-    // if($color != null){
-    //     $sql .= " AND method_color='$color' ";
-    // }
-    if($price != null && $price > 0){
-        $sql .= " AND gia_sp BETWEEN 0 AND '$price' ";
+function filter_sp($price,$search = '',$id_dm = 0){
+    $sql = "SELECT sp.*,dm.* FROM san_pham sp JOIN loai dm
+    ON sp.id_loai = dm.id_loai
+    WHERE 1 ";
+   
+   if($id_dm > 0){
+       $sql .= " AND sp.id_loai='$id_dm' ";
+   }
+    if($search != ''){
+        $sql .= " AND ( sp.ten_sp LIKE '$search%' or dm.ten_loai LIKE '$search%' )";
     }
+    $sql .= " AND sp.gia_sp <= $price ";
+    var_dump($sql);
+    // exit;
     return pdo_query($sql);
 }
 
@@ -143,12 +163,8 @@ function load_tt_hd($tt){
 
 // load hóa đơn theo id user
 function load_hd_user($id_user){
-    $sql = "SELECT hd.* ,ct.*,sp.* FROM hoa_don hd JOIN ct_hd ct
-    ON hd.id_hd = ct.id_hd JOIN san_pham sp 
-    ON ct.id_sp = sp.id_sp
-     WHERE hd.id_user = '$id_user'
-     
-      ";
+    $sql = "SELECT * FROM hoa_don hd 
+     WHERE hd.id_user = '$id_user'";
     return pdo_query($sql);
 }
 
@@ -159,6 +175,36 @@ function load_comment_sp($id_sp){
     WHERE cm.id_sp = '$id_sp'
      order by cm.ngay_cm DESC";
     return pdo_query($sql);
+}
+
+function load_all_cm($item_page=0,$curent=0,$tt=0){
+    $sql = "SELECT cm.*,sp.ten_sp,count(cm.id_sp) as sl FROM comment cm JOIN san_pham sp
+    ON cm.id_sp = sp.id_sp
+    WHERE 1 
+    group by cm.id_sp
+    ";
+    
+    if($item_page > 0){
+        $sql.= " LIMIT $item_page ";
+    }
+    if($curent > 0){
+        $sql.= " OFFSET $curent";
+    }
+    if($tt > 0){
+        $sql .=" LIMIT $tt";
+    }
+    
+   
+    return pdo_query($sql);
+}
+function load_cm_sp($id_sp){
+$sql = "SELECT cm.*,user.user_name FROM comment cm JOIN user
+ON cm.id_user = user.id_user
+WHERE id_sp ='$id_sp'";
+
+
+
+return pdo_query($sql);
 }
 
 ?>

@@ -582,3 +582,11 @@ padding-top: 1rem;
     width: 80%;
     font-size: 18px;
 }
+.alert_warning{
+    padding: 0.5rem;
+    background-color: #a8a7aa;
+    width: fit-content;
+    color: aliceblue;
+    box-shadow: 0 5px 5px gray;
+    border-radius: 5px;
+}

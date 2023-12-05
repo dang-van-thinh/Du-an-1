@@ -30,16 +30,19 @@
                         <span><?= $ngay_mua ?></span>
                     </td>
                     <td>
-                        <select name="trang_thai" id="">
-                        <option <?= $trang_thai == 0? 'selected':'' ?> value="0">Hủy đơn hàng</option>
-                        <option <?= $trang_thai == 1? 'selected':'' ?> value="1">Đang chờ duyệt</option>
-                        <option <?= $trang_thai == 2? 'selected':'' ?> value="2">Đã duyệt - Đang giao</option>
-                        <option disabled <?= $trang_thai == 3? 'selected':'' ?> value="3">Đã giao</option>
-                        </select>
+                        <div <?= $trang_thai == 3 ? 'hidden':''?>>
+
+                            <select name="trang_thai" id="trang_thai_<?=$id_hd ?>" onchange="changeStatusOrder(<?= $id_hd?>)">
+                                <option <?= $trang_thai == 0? 'selected':'' ?> value="0">Hủy đơn hàng</option>
+                                <option <?= $trang_thai == 1? 'selected':'' ?> value="1">Đang chờ duyệt</option>
+                                <option <?= $trang_thai == 2? 'selected':'' ?> value="2">Đã duyệt - Đang giao</option>
+                                <option disabled <?= $trang_thai == 3? 'selected':'' ?> value="3">Đã giao</option>
+                            </select>
+                        </div>
                     </td>
                     <td style="width: 250px">
                         <a href="?ad=infor_hd&id_hd=<?= $id_hd ?>" class="btn btn-outline-warning">Thông tin</a>
-                        <input type="submit" name="update_hd" value="Cập nhật" class="btn btn-outline-success">
+                        
                     </td>
                 </tr>
             </form>
@@ -75,3 +78,24 @@
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+function changeStatusOrder(id_hd) { 
+    let tt = document.getElementById(`trang_thai_${id_hd}`);
+    // console.log(tt);
+    $.ajax({
+        type: "post",
+        url: "../func/order_admin.php",
+        data: {
+            idOrder: id_hd,
+            status: tt.value
+        },
+        success: function (response) {
+            alert(response);
+        },
+        error: function (error) {
+            console.log(error)
+        }
+    });
+ }
+</script>
