@@ -22,6 +22,7 @@ if (isset($_SESSION['id_user']) && $_SESSION['role'] != 0) {
                 $tt_0 = load_tt_hd(1);
                 $tt_3 = load_tt_hd(2);
                 $user = count_item('user');
+                $comment = count_item('comment');
                 include '../view/admin/thong-ke/home.php';
                 break;
             case 'add_sp':
@@ -55,10 +56,10 @@ if (isset($_SESSION['id_user']) && $_SESSION['role'] != 0) {
                                 echo "Độ dài của hai mảng không bằng nhau.";
                             }
                             $method_color = json_encode($method_color,JSON_UNESCAPED_UNICODE); // chuyển đổi mảng liên kết thành dạng json, với ddidiefu kiện là kochuyeenr đổi mã hóa
-                            echo($method_color);
+                            // echo($method_color);
                         }
                     }else{
-                        echo 'KO CÓ MÀU';
+                        echo 'sp KO CÓ MÀU';
                         $method_color = implode(' ', $method_color); // vì nó ko có giá trị 
                     }
                     $method_size = $_POST['method_size'];
@@ -74,7 +75,7 @@ if (isset($_SESSION['id_user']) && $_SESSION['role'] != 0) {
                         setcookie('toasct_f', $check_sp, time() + 3, '/');
                         header('location: ?ad=add_sp');
                     } else {
-                        echo 'okeeeee';
+                        // echo 'okeeeee';
 
                         move_uploaded_file( $img_tmp,$img);
                         insert_sp(
@@ -182,7 +183,7 @@ if (isset($_SESSION['id_user']) && $_SESSION['role'] != 0) {
                         setcookie('toasct_f', $check_sp, time() + 3, '/');
                         header('location: ?ad=add_sp');
                     } else {
-                        echo 'eeeokee';
+                        // echo 'eeeokee';
                         move_uploaded_file( $img_tmp,$img);
                         edit_sp(
                             $name_sp,
@@ -375,8 +376,37 @@ if (isset($_SESSION['id_user']) && $_SESSION['role'] != 0) {
                 include '../view/admin/danh-muc/add_dm.php';
                 break;
             case 'comment':
+                $pani = 1;
+                if (isset($_GET['curent_page'])) {
+                    $pani = $_GET['curent_page'];
+                }
+                $item_page = 10;
+                $curent = $pani - 1;
+                $curent = $curent * $item_page;
+                $table = 'comment';
+                $total_item = count_item($table); // đếm có bao nhiêu danh mục để chia page
+                $page = ceil($total_item / $item_page); // làm tròn số lên 
+                $comment = load_all_cm($item_page,$curent);
                 include '../view/admin/binh-luan/comment.php';
             break;
+            case 'ct_comment':
+                if(isset($_GET['id_sp'])){
+                   
+                    $id_sp = $_GET['id_sp'];
+                    $comment = load_cm_sp($id_sp);
+                    include '../view/admin/binh-luan/comment_sp.php';
+                }else{
+                    header('location: ?ad=comment');
+                }
+                break;
+            case 'del_cm':
+                if(isset($_GET['id_cm'])){
+                    $id_cm = $_GET['id_cm'];
+                    del_cm($id_cm);
+                    setcookie('toasct_s','Xóa bình luận thành công !',time()+3,'/');
+                    header("location: ?ad=comment");
+                }
+                break;
             case 'thong_ke':
                 $pani = 1;
                 if (isset($_GET['curent_page'])) {
@@ -401,13 +431,13 @@ if (isset($_SESSION['id_user']) && $_SESSION['role'] != 0) {
                     $sp = load_ct_hd($id_hd);
                     include '../view/admin/thong-ke/infor_hd.php';
                 }
-                if(isset($_POST['update_hd']) && $_POST['update_hd']){
-                    $id_hd = $_POST['id_hd'];
-                    $tt = $_POST['trang_thai'];
-                    update_tt_dh($id_hd,$tt);
-                    setcookie('toasct_s','Cập nhật thành công !',time()+3,'/');
-                    header('location: ?ad=thong_ke');
-                }
+                // if(isset($_POST['update_hd']) && $_POST['update_hd']){
+                //     $id_hd = $_POST['id_hd'];
+                //     $tt = $_POST['trang_thai'];
+                //     update_tt_dh($id_hd,$tt);
+                //     setcookie('toasct_s','Cập nhật thành công !',time()+3,'/');
+                //     header('location: ?ad=thong_ke');
+                // }
                 break;
             case 'bieu_do':
                 include '../view/admin/thong-ke/bieu_do.php';
@@ -423,6 +453,7 @@ if (isset($_SESSION['id_user']) && $_SESSION['role'] != 0) {
             $tt_0 = load_tt_hd(1);
                 $tt_3 = load_tt_hd(2);
                 $user = count_item('user');
+                $comment = count_item('comment');
                 include '../view/admin/thong-ke/home.php';
                 break;
         }
@@ -430,6 +461,7 @@ if (isset($_SESSION['id_user']) && $_SESSION['role'] != 0) {
         $tt_0 = load_tt_hd(1);
                 $tt_3 = load_tt_hd(2);
                 $user = count_item('user');
+                $comment = count_item('comment');
         include '../view/admin/thong-ke/home.php';
     }
 

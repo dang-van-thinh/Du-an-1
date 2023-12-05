@@ -31,7 +31,7 @@
             <tr>
               <th>ẢNH</th>
               <th>THÔNG TIN</th>
-              <th>GIẢM GIÁ</th>
+              
               <th>SỐ LƯỢNG</th>
               <th>THÀNH TIỀN</th>
               <th></th>

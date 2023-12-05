@@ -1,6 +1,6 @@
 <body>
     <div class="wrapper">
-        <form action="" method="post" class="">
+        <form action="?lg=forgot" method="post" class="">
             <div class="card item_center" style="width: 30rem;">
                 <div class="card-header text-center">
                     <h4 class="fw-bold">Quên mật khẩu</h4>

@@ -43,7 +43,7 @@ function renderCart() {
                                 <span>Màu:</span> <span class="color-product"> ${e.color}</span>
                               <span>Size:</span>  <span class="size-product"> ${e.size}</span>
                             </td>
-                            <td>-${discountPrice} VNĐ</td>
+                            
                             <td class="product-quantity">
                                 <span class="btn_minus"><i class="fa-solid fa-minus"></i></span>
                                 <span class="quantity_value">${e.quannity}</span>

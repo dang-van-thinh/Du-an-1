@@ -16,7 +16,7 @@ function insert_user($name_user,$email,$password,$role=0,$address_user='',$numbe
 // thêm mới sản phẩm
 function insert_sp($name_sp,$price_sp,$price_km,$loai_sp,$quanity_sp,$mota_sp,$date_sp,$img,$method_color,$method_size){
     $sql = "INSERT INTO san_pham(id_loai,ten_sp,gia_sp,gia_km,img,so_luong,ngay_nhap,mo_ta,method_color,method_size) 
-    VALUES('$loai_sp','$name_sp','$price_sp','$price_km','$img','$quanity_sp','$date_sp','$mota_sp','$method_color','$method_size')";
+    VALUES('$loai_sp','$name_sp','$price_sp','$price_km','$img','$quanity_sp','$date_sp',n'$mota_sp','$method_color','$method_size')";
     pdo_excute($sql);
 }
 
