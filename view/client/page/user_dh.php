@@ -54,7 +54,7 @@
                                     
                                 </td>
                                 <td>
-                                    <a href="?act=detail_order&id_hd=<?= $id_hd?>">Chi tiết</a>
+                                    <a href="?act=detail_order&id_hd=<?= $id_hd?>" class="btn_success">Chi tiết</a>
                                 </td>
                             </tr>
                         <?php endforeach ?>

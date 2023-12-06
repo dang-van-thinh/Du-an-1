@@ -150,8 +150,47 @@ if (isset($_GET['act'])) {
             if(isset($_GET['id_user'])){
                 $tk = load_one_tk($_GET['id_user']);
                 extract($tk);
-                include '../view/client/page/ct_tk.php';
+               
             }
+            if(isset($_POST['edit_user'])){
+                $name_user = $_POST['name_user'];
+                    $email = $_POST['email'];
+                    $password = $_POST['password'];
+                    $id_user = $_POST['id_user'];
+                    
+                    $address_user = $_POST['address_user'];
+                    $number_phone = $_POST['number_phone'];
+
+                    $anh_user = $_FILES['anh_user_2']['name'];
+                    $img = '';
+
+
+                    if (check_form_user(
+                        $name_user,
+                        $email,
+                        $password,
+                        0,
+                        $address_user,
+                        $number_phone) == "") {
+                        if ($anh_user != "") {
+                            $folder = '../upload/user/';
+                            $img = $folder . basename($anh_user);
+                            $anh_tmp = $_FILES['anh_user_2']['tmp_name'];
+                            move_uploaded_file($anh_tmp, $img);
+                        } else {
+                            $img = $_POST['anh_user'];
+                        }
+                        //
+                        edit_user($id_user, $name_user, $email, $password, 0, $address_user, $number_phone, $img);
+                        //
+                        setcookie('toasct_s', 'Thay đổi thông tin người dùng thành công !', time() + 5, '/');
+                        header('location: index.php?act=home');
+                    } else {
+                        $error = check_form_user($name_user, $email, $password, 0, $address_user, $number_phone);
+                        setcookie('toasct_f', $error, time() + 5, '/');
+                    }
+            }
+            include '../view/client/page/ct_tk.php';
             
             break;
         case 'infor_order':

@@ -415,11 +415,11 @@ if (isset($_SESSION['id_user']) && $_SESSION['role'] != 0) {
                 $item_page = 10;
                 $curent = $pani - 1;
                 $curent = $curent * $item_page;
-                $table = 'user';
+                $table = 'hoa_don';
                 $total_item = count_item($table); // đếm có bao nhiêu danh mục để chia page
                 $page = ceil($total_item / $item_page); // làm tròn số lên 
                 //load hd
-                $hd = load_all_hd();
+                $hd = load_all_hd($item_page,$curent);
                 // var_dump($hd);
                 
                 include '../view/admin/thong-ke/hoa_don.php';

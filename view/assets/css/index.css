@@ -590,3 +590,48 @@ padding-top: 1rem;
     box-shadow: 0 5px 5px gray;
     border-radius: 5px;
 }
+.btn_success{
+    padding: 0.45rem 0.5rem;
+    border: 1px solid rgb(13, 230, 13);
+    border-radius: 5px;
+    color: rgb(5, 5, 5);
+    font-size: 15px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.btn_success:hover{
+    color: white;
+    background-color: #049004;
+    transform: translateY(-3px);
+}
+.btn_danger{
+    padding: 0.45rem 0.5rem;
+    border: 1px solid rgb(230, 20, 13);
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.btn_danger:hover{
+    color: #fff;
+    background-color: #901e04;
+    transform: translateY(-3px);
+}
+
+.content_infor_user{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 30%;
+    gap: 5%;
+}
+.img_infor{
+    width: 12rem;
+}
+.infor_user_1 div{
+    margin-top: 2rem;
+}
+.infor_user_1 div input{
+    padding: 5px ;
+    font-size: 16px;
+}
