@@ -20,7 +20,7 @@ function htmlBillCart () {
     });
     htmlProduct.textContent = totalProduct;
     totall_price_product.textContent = priceTotall;
-    price_final.textContent = priceTotall;
+    price_final.value = priceTotall;
     console.log(totalProduct);
  }
  htmlBillCart();
