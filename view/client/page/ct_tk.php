@@ -1,11 +1,12 @@
+
 <div class="main-content">
 <div class="container my-4">
         <div class="my-3">
             <h3>Thay đổi thông tin tài khoản</h3>
         </div>
-        <form action="?ad=ct_tk" method="post" enctype="multipart/form-data">
-            <div class="row">
-                <div class="col-lg-6">
+        <form action="?act=infor_user" method="post" enctype="multipart/form-data">
+            <div class="content_infor_user">
+                <div class="infor_user_1">
                     <div class="mt-3">
                         <label for="id_user" class="form-label">Mã người dùng</label>
                         <input type="text" readonly name="id_user" id="id_user" class="form-control"  value="<?=$id_user?>">
@@ -30,7 +31,7 @@
                     </div> -->
                 </div>
 
-                <div class="col-lg-6">
+                <div class="infor_user_1">
                     <div class="mt-3">
                         
                         <div class="mt-3">
@@ -57,7 +58,7 @@
             <div class="my-5">
                 <div class="btn-group">
                     
-                    <input type="submit" value="Lưu" class="btn btn-success" name="edit_tk">
+                    <input type="submit" value="Lưu" class="btn_success" name="edit_user">
                 </div>
             </div>
         </form>

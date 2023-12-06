@@ -132,9 +132,16 @@ function load_id_hd($id_user){
 
 
 // lấy thông tin ordered
-function load_all_hd(){
+function load_all_hd($item_page=0,$curent=0){
     $sql = "SELECT hd.*,ct.* FROM hoa_don hd JOIN ct_hd ct
     ON hd.id_hd = ct.id_hd group by hd.id_hd order by ngay_mua DESC";
+     if($item_page > 0){
+        $sql.= " LIMIT $item_page ";
+    }
+    if($curent > 0){
+        $sql.= " OFFSET $curent";
+    }
+   
     return pdo_query($sql);
 }
 function load_one_hd($id_hd =0 ){
