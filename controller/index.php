@@ -101,6 +101,7 @@ if (isset($_GET['act'])) {
                 $color = $_POST['color'];
                 $size = $_POST['size'];
 
+                
 
 
                 $error = check_form_order($name_order, $number_phone_order, $address_order, $email_order);
@@ -123,6 +124,12 @@ if (isset($_GET['act'])) {
                             }
                             update_tong_sp_hd(count($id_sp),$id_hd);
                         }
+                        
+                        if($pay == 2){
+                           
+
+                            include '../func/pay_momo.php';
+                        }
                         // Gửi thông báo về trình duyệt
                         echo "<script>window.localStorage.removeItem('toCart')</script>";
                         setcookie('toasct_s','Mua hàng thành công !',time()+3,'/');
@@ -140,12 +147,15 @@ if (isset($_GET['act'])) {
                 header('location: ?act=home');
             }
             break;
-        // case 'ordered':
-        //     $hd = load_one_hd();
-        //     extract($hd);
-        //         $sp = load_ct_hd($id_hd);
-        //         include '../view/client/page/ordered.php';
-        //     break;
+        case 'ordered_online':
+                // Gửi thông báo về trình duyệt
+                echo "<script>window.localStorage.removeItem('toCart')</script>";
+                setcookie('toasct_s','Mua hàng thành công !',time()+3,'/');
+                $hd = load_one_hd();
+                extract($hd);
+                    $sp = load_ct_hd($id_hd);
+                    include '../view/client/page/ordered.php';
+            break;
         case 'infor_user':
             if(isset($_GET['id_user'])){
                 $tk = load_one_tk($_GET['id_user']);

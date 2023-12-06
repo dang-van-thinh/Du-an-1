@@ -65,8 +65,8 @@
                                 <label for="cod">Thanh toán khi nhận hàng</label>
                             </div>
                             <div class="free-ship">
-                                <input type="radio" name="pay" id="card" disabled value="2">
-                                <label for="card" class="disable">Thanh toán bằng thẻ tín dụng</label>
+                                <input type="radio" name="pay" id="card"  value="2">
+                                <label for="card" class="disable">Thanh toán bằng MOMO</label>
                             </div>
                             <div class="free-ship">
                                 <input type="radio" name="pay" id="cod" disabled value="3">
@@ -89,7 +89,7 @@
                         <span class="info-name">Tổng tiền hàng</span> <span class="info-number" id="totall_price_product">0 VNĐ</span>
                     </div>
                     <div class="info-wapper">
-                        <span class="info-name">Thành tiền</span> <span class="info-number" id="price_final">0 VNĐ</span>
+                        <span class="info-name">Thành tiền</span> <input class="info-number" name="price_final" id="price_final" value="">
                     </div>
                     <div class="info-wapper">
                         <span class="info-name">Phí vận chuyển</span> <span class="info-number">0 VNĐ</span>
@@ -111,6 +111,32 @@
 </form>
 
 <script>
+    function htmlBillCart () { 
+    var storage = JSON.parse(localStorage.getItem('toCart'));
+    console.log(storage);
+    if (storage == null) {
+        var arrCart = [];
+       
+    } else {
+        var arrCart = [];
+        arrCart = storage;
+    }
+    let htmlProduct = document.getElementById('total_product');
+    let totall_price_product = document.getElementById('totall_price_product');
+    let price_final =document.getElementById('price_final');
+
+    let totalProduct = 0;
+    let priceTotall= 0;
+    arrCart.forEach((item,index) => {
+        totalProduct += Number(item.quannity);
+        priceTotall += Number(item.quannity) * Number(item.price);
+    });
+    htmlProduct.textContent = totalProduct;
+    totall_price_product.textContent = priceTotall;
+    price_final.value = priceTotall;
+    console.log(totalProduct);
+ }
+ htmlBillCart();
     function renderOrder() {
         var storage = JSON.parse(localStorage.getItem('toCart'));
         // console.log(storage);
