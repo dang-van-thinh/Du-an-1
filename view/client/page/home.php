@@ -53,15 +53,11 @@
                 extract($item);
             ?>
                 <div class="item_product">
-
-
                     <a href="?act=detail_sp&id_sp=<?= $id_sp ?>">
-
                         <div class="header_product">
                             <img src="<?= $img ?>" alt="" class="img_product" />
                             <a href="?act=detail_sp&id_sp=<?= $id_sp ?>" class="add_product">Xem chi tiết</a>
                             <input type="text" name="" hidden class="id_product" value="">
-
                         </div>
                     </a>
                     <a href="?act=detail_sp&id_sp=<?= $id_sp ?>">
